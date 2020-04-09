@@ -199,12 +199,13 @@ body {
     position: relative; }
     .brand__title::before {
       content: "";
-      height: 6px;
+      height: 10px;
       background-color: #27ae60;
       position: absolute;
       top: 0;
       left: 0;
-      right: 0; }
+      right: 0;
+      z-index: 10; }
     .brand__title::after {
       content: "THƯƠNG HIỆU";
       font-size: 32px;
@@ -217,13 +218,14 @@ body {
       left: 0;
       right: 0;
       text-align: center;
-      height: max-content;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 450px;
       margin: auto;
-      letter-spacing: 0.05em; }
+      letter-spacing: 0.05em;
+      z-index: 11; }
   .brand__title-title {
     text-transform: uppercase;
     color: #27ae60;
@@ -639,14 +641,14 @@ body {
     display: flex;
     align-items: center;
     padding: 18px 35px !important;
-    border-bottom: 0.5px solid #000000; }
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3); }
     .nav__item a {
       padding: 0; }
   .login {
     display: flex;
     width: 100%;
     padding: 18px 35px;
-    border-bottom: 0.5px solid #000000; }
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3); }
     .login .nav__login, .login .nav__item a, .nav__item .login a {
       font-size: 16px;
       margin-right: 0; }

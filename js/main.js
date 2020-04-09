@@ -29,7 +29,7 @@ window.onclick = function(event) {
 
 $(document).ready(function() {
   var $win = $(window);
-  var $nav = $(".login");
+  var $nav = $("#navbarCollapse");
 
   var brand = $(".brand__list li");
   var ele = $("#carouselExampleIndicators .carousel-indicators li.active");

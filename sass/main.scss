@@ -219,12 +219,13 @@ body {
     position: relative;
     &::before {
       content: "";
-      height: 6px;
+      height: 10px;
       background-color: $color-main;
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
+      z-index: 10;
     }
     &::after {
       content: "THƯƠNG HIỆU";
@@ -238,13 +239,14 @@ body {
       left: 0;
       right: 0;
       text-align: center;
-      height: max-content;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 450px;
       margin: auto;
       letter-spacing: 0.05em;
+      z-index: 11;
     }
   }
   &__title-title {
@@ -769,7 +771,7 @@ body {
     display: flex;
     align-items: center;
     padding: 18px 35px !important;
-    border-bottom: 0.5px solid #000000;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
     a {
       padding: 0;
     }
@@ -778,7 +780,7 @@ body {
     display: flex;
     width: 100%;
     padding: 18px 35px;
-    border-bottom: 0.5px solid #000000;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
     .nav__login {
       font-size: 16px;
       margin-right: 0;
