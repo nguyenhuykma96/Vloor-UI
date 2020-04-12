@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
@@ -56,6 +56,7 @@ body {
   color: $color-main;
   text-transform: uppercase;
   padding-right: 14px;
+  font-weight: 600;
   &:hover {
     color: $color-main-light;
     text-decoration: none;
@@ -153,30 +154,35 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     text-align: center;
     max-height: 60vh;
-    height: auto;
     overflow: hidden;
-    padding: 90px 86px 60px 86px;
+    padding: 120px 280px;
+    margin: auto;
     margin-bottom: 48px;
+    width: 990px;
 
     h1 {
-      font-size: 80px;
+      font-size: 42px;
+      line-height: 57px;
       text-transform: uppercase;
-      margin-bottom: 0;
+      margin-bottom: 10px;
       font-weight: bold;
     }
     h3 {
-      font-size: 36px;
+      font-size: 24px;
+      line-height: 33px;
       margin-bottom: 0;
-      font-weight: bold;
-      line-height: 49px;
+      font-weight: 600;
     }
   }
 }
 .carousel__content-button {
   padding: 12px 18px;
   color: $color-text;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
   background: $color-main;
   font-size: 16px;
+  line-height: 20px;
   border: none;
   cursor: pointer;
 }
@@ -229,7 +235,8 @@ body {
     }
     &::after {
       content: "THƯƠNG HIỆU";
-      font-size: 32px;
+      font-size: 24px;
+      font-family: Roboto, sans-serif;
       font-weight: 900;
       color: #27ae60;
       background-color: #ffff;
@@ -297,6 +304,7 @@ body {
       color: $color-main;
       font-size: 20px;
       text-transform: uppercase;
+      font-family: Roboto, sans-serif;
       &:hover {
         text-decoration: none;
       }
@@ -331,13 +339,13 @@ body {
 /* ---------Floor------- */
 .floor {
   &__title {
-    padding: 43px 140px;
-    @include flex(flex, row, center center);
+    padding: 20px 140px;
+    @include flex(flex, row, flex-start, center);
     h2 {
       color: $color-main;
       font-weight: bold;
       text-transform: uppercase;
-      font-size: 28px;
+      font-size: 20px;
     }
   }
 }
@@ -376,21 +384,24 @@ body {
       margin-right: 10px;
     }
     h4 {
-      font-size: 18px;
+      font-size: 15px;
+      font-family: Roboto, sans-serif;
       font-weight: 500;
       color: $color-main-light;
     }
   }
   &-price {
     span {
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 500;
+      line-height: 18px;
       color: $color-price-init;
     }
   }
   &-price-default {
     strike {
       font-size: 14px;
+      line-height: 16px;
       font-weight: 300;
     }
   }
@@ -398,8 +409,9 @@ body {
     justify-content: flex-start;
     align-items: center;
     h3 {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
+      line-height: 16px;
       color: $color-black;
     }
   }
@@ -481,16 +493,20 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .featured__content {
-  font-family: Open Sans;
   color: $color-white;
   span {
     color: #d60a2e;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: bold;
+    line-height: 35px;
   }
   h2 {
-    font-size: 52px;
+    font-size: 42px;
+    line-height: 58px;
     font-weight: bold;
+  }
+  h5 span {
+    font-size: 20px;
   }
 }
 .featured__button {
@@ -505,11 +521,15 @@ body {
   position: relative;
   min-height: 628px;
   align-items: center;
-  // font-family: Open Sans;
 }
 .footer__info {
   color: $color-white;
   margin-top: 36px;
+  &-address {
+    h5 {
+      line-height: 24px;
+    }
+  }
   .company__name {
     text-transform: uppercase;
   }
@@ -527,7 +547,8 @@ body {
 .footer__social {
   color: $color-white;
   h4 {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
     margin-bottom: 16px;
   }
   &-icon {
@@ -563,7 +584,7 @@ body {
   }
 }
 .footer__map {
-  height: 138px;
+  height: 109px;
 }
 /*  ---CoppyRight---- */
 #copyright {
@@ -573,12 +594,12 @@ body {
   color: $color-black;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
   .carousel__content {
     &-text {
       padding: 45px 50px;
-      margin-bottom: 36x;
-      min-width: 620px;
+      margin-bottom: 36px;
+      max-width: 620px;
       h1 {
         font-size: 50px;
         line-height: 68px;
@@ -586,7 +607,6 @@ body {
       h3 {
         font-size: 22px;
         margin-bottom: 0;
-        font-weight: bold;
         line-height: 30px;
       }
     }
@@ -604,7 +624,6 @@ body {
 @media (min-width: 1024px) and (max-width: 1399.98px) {
   .header {
     padding: 0 50px;
-
     img {
       width: 170px;
     }
@@ -678,6 +697,14 @@ body {
 }
 
 @media (max-width: 992px) {
+  .full-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    animation: 2s;
+  }
   .navbar-collapse {
     position: absolute;
     left: 100%;
@@ -717,9 +744,6 @@ body {
   .nav__product {
     &:hover {
       display: unset;
-      .dropdown-menu {
-        // display: none;
-      }
     }
     &:active {
       display: inline-block;
@@ -808,11 +832,6 @@ body {
   .social-destop {
     display: none;
   }
-  .carousel-item {
-    img {
-      // height: 50vh;
-    }
-  }
   /* ---Brand--- */
   .brand__list {
     li {
@@ -822,7 +841,7 @@ body {
   /* ----------Floor-------- */
   .floor {
     &__title {
-      padding: 20px 80px;
+      padding: 20px 46px;
     }
   }
   .floor__slide {
@@ -837,15 +856,6 @@ body {
         left: 24px;
       }
     }
-  }
-  /* ----------Floor-------- */
-  .floor {
-    &__title {
-      padding: 17px 20px;
-    }
-  }
-  .floor__slide {
-    padding: 50px 37px 73px;
   }
   /* ----------Footer-------- */
   #footer {
@@ -1009,7 +1019,29 @@ body {
       line-height: 19px;
     }
   }
+  .footer__info {
+    &-address {
+      h5 {
+        line-height: 19px;
+      }
+    }
+  }
   .featured__button {
     margin-top: 16px;
+  }
+  .footer__social {
+    margin-top: 36px;
+    h4 {
+      font-size: 18px;
+    }
+  }
+  .footer__map {
+    border: 3px solid #dfdfdf;
+    min-height: 145px;
+  }
+  #copyright {
+    span {
+      font-size: 10px;
+    }
   }
 }

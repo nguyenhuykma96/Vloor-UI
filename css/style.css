@@ -7,7 +7,7 @@
   box-sizing: inherit; }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
@@ -45,7 +45,8 @@ body {
 .nav__login, .nav__item a {
   color: #27ae60;
   text-transform: uppercase;
-  padding-right: 14px; }
+  padding-right: 14px;
+  font-weight: 600; }
   .nav__login:hover, .nav__item a:hover {
     color: #0a7634;
     text-decoration: none; }
@@ -142,26 +143,31 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     text-align: center;
     max-height: 60vh;
-    height: auto;
     overflow: hidden;
-    padding: 90px 86px 60px 86px;
-    margin-bottom: 48px; }
+    padding: 120px 280px;
+    margin: auto;
+    margin-bottom: 48px;
+    width: 990px; }
     .carousel__content-text h1 {
-      font-size: 80px;
+      font-size: 42px;
+      line-height: 57px;
       text-transform: uppercase;
-      margin-bottom: 0;
+      margin-bottom: 10px;
       font-weight: bold; }
     .carousel__content-text h3 {
-      font-size: 36px;
+      font-size: 24px;
+      line-height: 33px;
       margin-bottom: 0;
-      font-weight: bold;
-      line-height: 49px; }
+      font-weight: 600; }
 
 .carousel__content-button, .featured__button {
   padding: 12px 18px;
   color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
   background: #27ae60;
   font-size: 16px;
+  line-height: 20px;
   border: none;
   cursor: pointer; }
 
@@ -208,7 +214,8 @@ body {
       z-index: 10; }
     .brand__title::after {
       content: "THƯƠNG HIỆU";
-      font-size: 32px;
+      font-size: 24px;
+      font-family: Roboto, sans-serif;
       font-weight: 900;
       color: #27ae60;
       background-color: #ffff;
@@ -272,7 +279,8 @@ body {
       display: inline-block;
       color: #27ae60;
       font-size: 20px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-family: Roboto, sans-serif; }
       .brand__list li a:hover {
         text-decoration: none; }
 
@@ -296,16 +304,16 @@ body {
 
 /* ---------Floor------- */
 .floor__title {
-  padding: 43px 140px;
+  padding: 20px 140px;
   display: flex;
   flex-direction: row;
-  justify-content: center center;
+  justify-content: flex-start;
   align-items: center; }
   .floor__title h2 {
     color: #27ae60;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 28px; }
+    font-size: 20px; }
 
 .floor__img img {
   width: 100%; }
@@ -335,22 +343,26 @@ body {
     height: 18px;
     margin-right: 10px; }
   .floor__detail-brand h4 {
-    font-size: 18px;
+    font-size: 15px;
+    font-family: Roboto, sans-serif;
     font-weight: 500;
     color: #0a7634; }
   .floor__detail-price span {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
+    line-height: 18px;
     color: #525252; }
   .floor__detail-price-default strike {
     font-size: 14px;
+    line-height: 16px;
     font-weight: 300; }
   .floor__detail-title {
     justify-content: flex-start;
     align-items: center; }
     .floor__detail-title h3 {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
+      line-height: 16px;
       color: #000000; }
   .floor__detail-rating i {
     color: #ffc700;
@@ -414,15 +426,18 @@ body {
   background-color: rgba(0, 0, 0, 0.3); }
 
 .featured__content {
-  font-family: Open Sans;
   color: #ffffff; }
   .featured__content span {
     color: #d60a2e;
-    font-size: 20px;
-    font-weight: bold; }
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 35px; }
   .featured__content h2 {
-    font-size: 52px;
+    font-size: 42px;
+    line-height: 58px;
     font-weight: bold; }
+  .featured__content h5 span {
+    font-size: 20px; }
 
 /*  ---Footer---- */
 #footer {
@@ -437,6 +452,8 @@ body {
 .footer__info {
   color: #ffffff;
   margin-top: 36px; }
+  .footer__info-address h5 {
+    line-height: 24px; }
   .footer__info .company__name {
     text-transform: uppercase; }
 
@@ -454,7 +471,8 @@ body {
 .footer__social {
   color: #ffffff; }
   .footer__social h4 {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
     margin-bottom: 16px; }
   .footer__social-icon {
     margin-bottom: 10px; }
@@ -483,7 +501,7 @@ body {
       outline: unset; }
 
 .footer__map {
-  height: 138px; }
+  height: 109px; }
 
 /*  ---CoppyRight---- */
 #copyright {
@@ -495,18 +513,17 @@ body {
   font-size: 12px;
   color: #000000; }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
   .carousel__content-text {
     padding: 45px 50px;
-    margin-bottom: 36x;
-    min-width: 620px; }
+    margin-bottom: 36px;
+    max-width: 620px; }
     .carousel__content-text h1 {
       font-size: 50px;
       line-height: 68px; }
     .carousel__content-text h3 {
       font-size: 22px;
       margin-bottom: 0;
-      font-weight: bold;
       line-height: 30px; }
   .carousel__content-button, .featured__button {
     padding: 12px 18px;
@@ -568,6 +585,13 @@ body {
     padding-right: 20px; } }
 
 @media (max-width: 992px) {
+  .full-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    animation: 2s; }
   .navbar-collapse {
     position: absolute;
     left: 100%;
@@ -675,18 +699,13 @@ body {
     padding: 8px 42px; }
   /* ----------Floor-------- */
   .floor__title {
-    padding: 20px 80px; }
+    padding: 20px 46px; }
   .floor__slide {
     padding: 50px 95px 73px; }
   .owl-nav button:first-child {
     right: 24px; }
   .owl-nav button:last-child {
     left: 24px; }
-  /* ----------Floor-------- */
-  .floor__title {
-    padding: 17px 20px; }
-  .floor__slide {
-    padding: 50px 37px 73px; }
   /* ----------Footer-------- */
   #footer {
     min-height: 372px; }
@@ -783,5 +802,16 @@ body {
   .featured__content h5 {
     width: 63%;
     line-height: 19px; }
+  .footer__info-address h5 {
+    line-height: 19px; }
   .featured__button {
-    margin-top: 16px; } }
+    margin-top: 16px; }
+  .footer__social {
+    margin-top: 36px; }
+    .footer__social h4 {
+      font-size: 18px; }
+  .footer__map {
+    border: 3px solid #dfdfdf;
+    min-height: 145px; }
+  #copyright span {
+    font-size: 10px; } }
