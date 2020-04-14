@@ -996,6 +996,10 @@ body {
 }
 @media (max-width: 576px) {
   // -------Slide-------
+  .carousel-indicators,
+  .carousel-indicators-number {
+    display: none;
+  }
   .carousel__content {
     width: calc(100% - 40px);
     &-text {
