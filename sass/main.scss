@@ -22,6 +22,9 @@ body {
   background-color: #fff !important;
   height: 64px;
   padding: 0 120px;
+  #menu {
+    outline: none;
+  }
 }
 .full-screen {
   background-color: rgba(0, 0, 0, 0.3);
@@ -77,6 +80,7 @@ body {
       position: absolute;
       top: -2px;
       left: 15px;
+      background-color: $color-white;
       @include flex(flex, row, center, center);
     }
   }
@@ -140,6 +144,7 @@ body {
 .carousel-item {
   img {
     height: 100vh;
+    object-fit: cover;
   }
 }
 .carousel__content {
@@ -246,7 +251,7 @@ body {
       left: 0;
       right: 0;
       text-align: center;
-      height: 100px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -268,7 +273,8 @@ body {
     border: 1px solid #e0e0e0;
     background-color: #fff;
     color: $color-main;
-    padding: 14px 12px;
+    padding: 6px 12px;
+    outline: none;
     span {
       font-size: 12px;
       text-transform: uppercase;
@@ -280,7 +286,7 @@ body {
   }
 }
 .brand__container {
-  padding-top: 60px;
+  padding-top: 45px;
   .brand__col {
     @include flex(flex, row, center, center);
   }
@@ -290,9 +296,12 @@ body {
   margin-bottom: unset;
   @include flex(flex, row, center, center);
   li {
-    padding: 9px 52px;
-    border: 1px solid $color-main;
+    border: 2px solid $color-main;
     margin-right: 20px;
+    min-width: 142px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
     &.active {
       background-color: $color-main;
       a {
@@ -302,9 +311,7 @@ body {
     a {
       display: inline-block;
       color: $color-main;
-      font-size: 20px;
       text-transform: uppercase;
-      font-family: Roboto, sans-serif;
       &:hover {
         text-decoration: none;
       }
@@ -547,7 +554,6 @@ body {
 .footer__social {
   color: $color-white;
   h4 {
-    font-size: 16px;
     font-weight: bold;
     margin-bottom: 16px;
   }
@@ -832,12 +838,6 @@ body {
   .social-destop {
     display: none;
   }
-  /* ---Brand--- */
-  .brand__list {
-    li {
-      padding: 8px 42px;
-    }
-  }
   /* ----------Floor-------- */
   .floor {
     &__title {
@@ -891,7 +891,7 @@ body {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .navbar-collapse {
     &.show {
       left: calc(100% - 310px);
@@ -940,7 +940,7 @@ body {
   .brand {
     &__title {
       &::after {
-        width: 260px;
+        max-width: 70%;
         font-size: 24px;
       }
     }
@@ -953,8 +953,8 @@ body {
   }
   .brand__list {
     li {
-      padding: 5px 10px;
       margin-right: 10px;
+      min-width: 74px;
       a {
         font-size: 14px;
       }
@@ -995,6 +995,50 @@ body {
   }
 }
 @media (max-width: 576px) {
+  // -------Slide-------
+  .carousel__content {
+    width: calc(100% - 40px);
+    &-text {
+      min-width: unset;
+      width: 100%;
+      h1 {
+        font-size: 24px;
+        line-height: 33px;
+      }
+      h3 {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+  .brand {
+    &__title {
+      &::before {
+        height: 5px;
+      }
+    }
+  }
+  .brand__list {
+    li {
+      min-width: unset;
+      width: auto;
+      padding: 0 9px;
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+  .brand__select-color {
+    button {
+      display: flex;
+      align-items: center;
+      span {
+        max-height: 100%;
+        height: 19px;
+        width: 35px;
+      }
+    }
+  }
   .floor__detail {
     &-sold {
       flex-basis: 80%;
@@ -1013,6 +1057,9 @@ body {
       font-size: 24px;
       line-height: 33px;
       margin-bottom: 25px;
+      &:first-child {
+        margin-bottom: 0;
+      }
     }
     h5 {
       width: 63%;

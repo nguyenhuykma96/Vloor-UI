@@ -20,6 +20,8 @@ body {
   background-color: #fff !important;
   height: 64px;
   padding: 0 120px; }
+  .header #menu {
+    outline: none; }
 
 .full-screen {
   background-color: rgba(0, 0, 0, 0.3); }
@@ -69,6 +71,7 @@ body {
       position: absolute;
       top: -2px;
       left: 15px;
+      background-color: #ffffff;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -127,7 +130,8 @@ body {
 
 /*  ---Slider---- */
 .carousel-item img {
-  height: 100vh; }
+  height: 100vh;
+  object-fit: cover; }
 
 .carousel__content {
   position: absolute;
@@ -225,7 +229,7 @@ body {
       left: 0;
       right: 0;
       text-align: center;
-      height: 100px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -243,7 +247,8 @@ body {
   border: 1px solid #e0e0e0;
   background-color: #fff;
   color: #27ae60;
-  padding: 14px 12px; }
+  padding: 6px 12px;
+  outline: none; }
   .brand__select-color button span {
     font-size: 12px;
     text-transform: uppercase;
@@ -253,7 +258,7 @@ body {
     padding: 4px 22px; }
 
 .brand__container {
-  padding-top: 60px; }
+  padding-top: 45px; }
   .brand__container .brand__col {
     display: flex;
     flex-direction: row;
@@ -268,9 +273,12 @@ body {
   justify-content: center;
   align-items: center; }
   .brand__list li {
-    padding: 9px 52px;
-    border: 1px solid #27ae60;
-    margin-right: 20px; }
+    border: 2px solid #27ae60;
+    margin-right: 20px;
+    min-width: 142px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px; }
     .brand__list li.active {
       background-color: #27ae60; }
       .brand__list li.active a {
@@ -278,9 +286,7 @@ body {
     .brand__list li a {
       display: inline-block;
       color: #27ae60;
-      font-size: 20px;
-      text-transform: uppercase;
-      font-family: Roboto, sans-serif; }
+      text-transform: uppercase; }
       .brand__list li a:hover {
         text-decoration: none; }
 
@@ -471,7 +477,6 @@ body {
 .footer__social {
   color: #ffffff; }
   .footer__social h4 {
-    font-size: 16px;
     font-weight: bold;
     margin-bottom: 16px; }
   .footer__social-icon {
@@ -694,9 +699,6 @@ body {
     align-items: flex-end; }
   .social-destop {
     display: none; }
-  /* ---Brand--- */
-  .brand__list li {
-    padding: 8px 42px; }
   /* ----------Floor-------- */
   .floor__title {
     padding: 20px 46px; }
@@ -724,7 +726,7 @@ body {
   #copyright {
     padding: 6px 0; } }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .navbar-collapse.show {
     left: calc(100% - 310px); }
   .header {
@@ -755,7 +757,7 @@ body {
     cursor: pointer; }
   /* ---Brand--- */
   .brand__title::after {
-    width: 260px;
+    max-width: 70%;
     font-size: 24px; }
   .brand__title-title {
     text-transform: uppercase;
@@ -763,8 +765,8 @@ body {
     font-size: 32px;
     font-weight: 900; }
   .brand__list li {
-    padding: 5px 10px;
-    margin-right: 10px; }
+    margin-right: 10px;
+    min-width: 74px; }
     .brand__list li a {
       font-size: 14px; }
   .brand__select-color button {
@@ -787,6 +789,32 @@ body {
     font-size: 14px; } }
 
 @media (max-width: 576px) {
+  .carousel__content {
+    width: calc(100% - 40px); }
+    .carousel__content-text {
+      min-width: unset;
+      width: 100%; }
+      .carousel__content-text h1 {
+        font-size: 24px;
+        line-height: 33px; }
+      .carousel__content-text h3 {
+        font-size: 14px;
+        line-height: 16px; }
+  .brand__title::before {
+    height: 5px; }
+  .brand__list li {
+    min-width: unset;
+    width: auto;
+    padding: 0 9px; }
+    .brand__list li a {
+      font-size: 12px; }
+  .brand__select-color button {
+    display: flex;
+    align-items: center; }
+    .brand__select-color button span {
+      max-height: 100%;
+      height: 19px;
+      width: 35px; }
   .floor__detail-sold {
     flex-basis: 80%; }
   .featured__col {
@@ -799,6 +827,8 @@ body {
     font-size: 24px;
     line-height: 33px;
     margin-bottom: 25px; }
+    .featured__content h2:first-child {
+      margin-bottom: 0; }
   .featured__content h5 {
     width: 63%;
     line-height: 19px; }

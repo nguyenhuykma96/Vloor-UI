@@ -34,7 +34,6 @@ window.onclick = function(event) {
 $(document).ready(function() {
   var $win = $(window);
   var $nav = $("#navbarCollapse");
-
   var brand = $(".brand__list li");
   var ele = $("#carouselExampleIndicators .carousel-indicators li.active");
   if (ele) {
@@ -48,9 +47,23 @@ $(document).ready(function() {
   $(brand).click(function() {
     $(this).toggleClass("active");
   });
+  if ($(window).width() < 576) {
+    var widthSelect = $(".brand__select-color").width();
+    $(".select-color").css({ "min-width": widthSelect });
+    $("#input-select-color").empty("");
+  }
+  $(window).resize(function() {
+    var width = $(window).width();
+
+    if (width < 576) {
+      $("#input-select-color").empty("");
+    } else {
+      console.log($("#input-select-color").val);
+      $("#input-select-color").text("Chọn màu");
+    }
+  });
 
   // carousel
-
   $(".owl-carousel").owlCarousel({
     nav: true,
     navText: ["<img src='./img/next.png'>", "<img src='./img/prev.png'>"],
