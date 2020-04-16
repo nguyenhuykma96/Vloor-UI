@@ -63,18 +63,33 @@ $(document).ready(function() {
     }
   });
 
+  $("button.dropdown-toggle").on("click", function() {
+    if (!$("#dropdown-color").hasClass("show")) {
+      $(".dropdown-icon").addClass("rotate");
+    } else {
+      $(".dropdown-icon").removeClass("rotate");
+    }
+  });
+
+  $(window).click(function() {
+    if ($(".dropdown-icon").hasClass("rotate")) {
+      $(".dropdown-icon").removeClass("rotate");
+    }
+  });
+
   // carousel
-  $(".owl-carousel").owlCarousel({
+  $(".floor__slide-carousel").owlCarousel({
     nav: true,
     navText: ["<img src='./img/next.png'>", "<img src='./img/prev.png'>"],
-    // loop: true,
+    loop: true,
     dots: false,
     margin: 33,
     responsiveClass: true,
     responsive: {
       0: {
         items: 1,
-        nav: false
+        nav: true,
+        autoWidth: true
       },
       380: {
         items: 1,
@@ -85,6 +100,50 @@ $(document).ready(function() {
         items: 2,
         nav: true,
         autoWidth: true,
+        margin: 30
+      },
+      1000: {
+        items: 3,
+        nav: true
+      },
+      1400: {
+        items: 4,
+        nav: true
+      },
+      1900: {
+        items: 5,
+        nav: true
+      }
+    }
+  });
+
+  $(".product-detail__preview-mobile").owlCarousel({
+    items: 1,
+    margin: 10,
+    dots: true
+  });
+
+  $(".product-related-carousel").owlCarousel({
+    nav: true,
+    dots: false,
+    margin: 33,
+    navText: ["<img src='./img/next.png'>", "<img src='./img/prev.png'>"],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+        // autoWidth: true
+      },
+      380: {
+        items: 1,
+        nav: true
+        // autoWidth: true
+      },
+      768: {
+        items: 2,
+        nav: true,
+        // autoWidth: true,
         margin: 30
       },
       1000: {

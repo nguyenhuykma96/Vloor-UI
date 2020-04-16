@@ -27,6 +27,7 @@ $color-header: #004c7e !default;
 $color-title: #4a4a4a !default;
 $color-noti: #d0021b !default;
 $color-bg: #f8f8f8 !default;
+$color-border: #c5c5c5 !default;
 $color-inactive-1: #b3b3b3 !default;
 $color-inactive-2: #cacaca !default;
 $color-textfield: #57677f !default;
@@ -62,12 +63,14 @@ $fw-bold: 600 !default;
 // 3. FONT SIZE
 $fs-h1: 36px !default;
 $fs-h2: 22px !default;
-$fs-h3: 24px !default; // Huy edit
+$fs-h3: 24px !default;
 $fs-h4: 16px !default;
-$fs-body: 16px !default; // Huy edit
+$fs-body: 16px !default;
+$fs-title: 20px !default;
+$fs-text: 14px !default;
 
 // 4. FONT FAMILY
-$font-family: "Open Sans" !default;
+$font-family: "Open Sans", sans-serif !default;
 
 // 7. Z-INDEX:
 $z-index-1: 1001;
