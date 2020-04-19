@@ -9,11 +9,6 @@ function myFunction() {
     .classList.toggle("dropdown-rotate");
 }
 
-document.getElementById("full-screen").addEventListener("click", function() {
-  document.getElementById("navbarCollapse").classList.remove("show");
-  document.getElementById("full-screen").classList.remove("full-screen");
-});
-
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches("#product-dropdown")) {
@@ -49,7 +44,9 @@ $(document).ready(function() {
   });
   if ($(window).width() < 576) {
     var widthSelect = $(".brand__select-color").width();
-    $(".select-color").css({ "min-width": widthSelect });
+    $(".select-color").css({
+      "min-width": widthSelect
+    });
     $("#input-select-color").empty("");
   }
   $(window).resize(function() {
@@ -58,7 +55,6 @@ $(document).ready(function() {
     if (width < 576) {
       $("#input-select-color").empty("");
     } else {
-      console.log($("#input-select-color").val);
       $("#input-select-color").text("Chọn màu");
     }
   });
@@ -77,6 +73,49 @@ $(document).ready(function() {
     }
   });
 
+  // rotate icon filter product
+  $(".products__sidenav-content").show();
+  $(".products__sidenav-title > i").on("click", function() {
+    $(this).toggleClass("rotate-180");
+    // show content filter
+    if (!$(this).hasClass("rotate-180")) {
+      $(this)
+        .parent()
+        .next(".products__sidenav-content")
+        .slideDown(300);
+    } else {
+      $(this)
+        .parent()
+        .next(".products__sidenav-content")
+        .slideUp(300);
+    }
+  });
+
+  // Product Sort by
+  $(".products__sort-content").hide();
+  $(".products__sort > i").on("click", function() {
+    let widthSort = $(".products__sort").width();
+    $(this).toggleClass("rotate-180");
+    if ($(this).hasClass("rotate-180")) {
+      $(".products__sort-content")
+        .css({ "min-width": widthSort })
+        .slideDown(200);
+    } else {
+      $(".products__sort-content").slideUp(300);
+    }
+  });
+  // show product filter
+  $(".products__sort .sort-icon").on("click", function() {
+    $("#display-opacity").addClass("display-opacity");
+    $("#product-filter").addClass("active");
+  });
+  // close product filter
+  $("#display-opacity").click(function(event) {
+    event.stopPropagation();
+    $("#product-filter").removeClass("active");
+    $(this).removeClass("display-opacity");
+  });
+
   // carousel
   $(".floor__slide-carousel").owlCarousel({
     nav: true,
@@ -88,18 +127,19 @@ $(document).ready(function() {
     responsive: {
       0: {
         items: 1,
-        nav: true,
-        autoWidth: true
+        nav: true
       },
       380: {
         items: 1,
-        nav: false,
-        autoWidth: true
+        nav: false
+      },
+      600: {
+        items: 2,
+        nav: false
       },
       768: {
         items: 2,
         nav: true,
-        autoWidth: true,
         margin: 30
       },
       1000: {
@@ -133,17 +173,18 @@ $(document).ready(function() {
       0: {
         items: 1,
         nav: true
-        // autoWidth: true
       },
       380: {
         items: 1,
         nav: true
-        // autoWidth: true
+      },
+      576: {
+        items: 2,
+        nav: true
       },
       768: {
         items: 2,
         nav: true,
-        // autoWidth: true,
         margin: 30
       },
       1000: {

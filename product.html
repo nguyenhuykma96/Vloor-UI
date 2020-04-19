@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;500&family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vloor Products</title>
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="owlcarousel/assets/owl.theme.default.min.css"
+    />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="display-opacity" class="fullWidth-opacity"></div>
+    <!---------------Header-------------------->
+    <nav class="navbar navbar-expand-lg  fixed-top bg-light  header">
+      <a href="/home"><img src="./img/logo.png" alt=""/></a>
+      <div
+        class="collapse navbar-collapse nav "
+        id="navbarCollapse"
+        onblur="_handleOnBlur();"
+      >
+        <div class="col social ">
+          <div class="social__icon">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+          </div>
+        </div>
+        <ul class="navbar-nav mr-auto nav__list">
+          <li class="nav-item active nav__item  ">
+            <img class="show-icon" src="./img/home.png" alt="" />
+            <a class="nav-link" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item nav__item">
+            <img class="show-icon" src="./img/about-us.png" alt="" />
+            <a class="nav-link" href="#">Giới thiệu</a>
+          </li>
+          <li
+            id="nav__product"
+            class="nav-item dropdown nav__item nav__product "
+          >
+            <div class="nav__product-main">
+              <img class="show-icon" src="./img/product.png" alt="" />
+              <a class="nav-link" href="#">
+                Sản phẩm
+              </a>
+              <i
+                id="product-dropdown"
+                class="fa fa-chevron-right show-icon "
+                aria-hidden="true"
+                onclick="myFunction()"
+              ></i>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu">
+              <a class="dropdown-item" href="#">Sàn</a>
+              <a class="dropdown-item" href="#">Phào</a>
+              <a class="dropdown-item" href="#">Nẹp</a>
+              <a class="dropdown-item" href="#">Dịch vụ thi công | Lắp đặt</a>
+            </div>
+          </li>
+          <li class="nav-item nav__item">
+            <img class="show-icon" src="./img/contact.png" alt="" />
+            <a class="nav-link" href="#">Liên hệ</a>
+          </li>
+        </ul>
+
+        <div class="login">
+          <i class="fa fa-user-circle-o show-icon " aria-hidden="true"></i>
+          <a class="nav__login" href="/login">Đăng nhập</a>
+        </div>
+      </div>
+
+      <div class="nav__icon">
+        <form class="mt-md-0 form-search">
+          <input
+            class="form-control mr-sm-2 form-input"
+            type="text"
+            placeholder="Search"
+          />
+        </form>
+        <i class="fa fa-shopping-cart nav__icon--cart" aria-hidden="true"
+          ><span>4</span></i
+        >
+      </div>
+      <button
+        id="menu"
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa fa-bars nav__icon--menu" aria-hidden="true"></i>
+      </button>
+    </nav>
+
+    <!-- -------------Free ship----------------->
+    <section class="shipping">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 shipping__col">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <div class="shipping__content d-lg-flex">
+              <h4 class="">Giao hàng miễn phí cho bạn:</h4>
+              <h6>
+                &nbsp; Nhận giao hàng tiêu chuẩn miễn phí trên tất cả các đơn
+                hàng.
+                <a href="#">Xem chi tiết</a>
+              </h6>
+            </div>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- -------------Products----------------->
+    <section class="products">
+      <div class="products__header">
+        <h3>Sàn</h3>
+        <div class="products__sort">
+          <img class="d-lg-none sort-icon" src="./img/sort-by.png" alt="" />
+          <h6 class="mr-2">Sắp xếp theo</h6>
+          <i class="fa fa-chevron-up" aria-hidden="true"></i>
+          <ul class="products__sort-content">
+            <li>Phổ biến nhất</li>
+            <li>Giá tăng dần</li>
+            <li>Giá giảm dần</li>
+            <li>Hàng mới</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="products__container">
+        <div id="product-filter" class="products__sidenav product-filter">
+          <h3 class="product-filter__name d-lg-none">Sàn</h3>
+          <!-- Màu sắc -->
+          <div class=" products__sidenav__block products__sidenav-color">
+            <div class="products__sidenav-title">
+              <h6>Màu sắc</h6>
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </div>
+            <div class="row products__sidenav-content">
+              <div
+                class="col-6 col-md-6 col-lg-6 col-xl-4 products__sidenav-color-items product-color"
+              >
+                <span class="products__sidenav-color-item"></span
+                ><span>(12)</span>
+              </div>
+              <div
+                class="col-6 col-md-6 col-lg-6 col-xl-4 products__sidenav-color-items product-color"
+              >
+                <span class="products__sidenav-color-item"></span
+                ><span>(12)</span>
+              </div>
+              <div
+                class="col-6 col-md-6 col-lg-6 col-xl-4 products__sidenav-color-items product-color"
+              >
+                <span class="products__sidenav-color-item"></span
+                ><span>(12)</span>
+              </div>
+              <div
+                class="col-6 col-md-6 col-lg-6 col-xl-4 products__sidenav-color-items product-color"
+              >
+                <span class="products__sidenav-color-item"></span
+                ><span>(12)</span>
+              </div>
+              <div
+                class="col-6 col-md-6 col-lg-6 col-xl-4 products__sidenav-color-items product-color"
+              >
+                <span class="products__sidenav-color-item"></span
+                ><span>(12)</span>
+              </div>
+              <div
+                class="col-6 col-md-6 col-lg-6 col-xl-4 products__sidenav-color-items product-color"
+              >
+                <span class="products__sidenav-color-item"></span
+                ><span>(12)</span>
+              </div>
+            </div>
+          </div>
+          <!-- Thương hiệu -->
+          <div class="products__sidenav__block products__sidenav-brand">
+            <div class="products__sidenav-title">
+              <h6>Thương hiệu</h6>
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </div>
+            <div class="row products__sidenav-content">
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Thương hiệu Pro 1</p>
+              </div>
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Thương hiệu Pro 1</p>
+              </div>
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Thương hiệu Pro 1</p>
+              </div>
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Thương hiệu Pro 1</p>
+              </div>
+            </div>
+          </div>
+          <!-- Loại sàn -->
+          <div class="products__sidenav__block products__sidenav-floor">
+            <div class="products__sidenav-title">
+              <h6>Thương hiệu</h6>
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </div>
+            <div class="row products__sidenav-content">
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Sàn loại 1</p>
+              </div>
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Sàn loại 1</p>
+              </div>
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Sàn loại 1</p>
+              </div>
+              <div class="col-lg-12 products__sidenav-color-items">
+                <p>Sàn loại 1</p>
+              </div>
+            </div>
+          </div>
+          <!-- Đánh giá -->
+          <div class="products__sidenav__block products__sidenav-rating">
+            <div class="products__sidenav-title">
+              <h6>Đánh giá</h6>
+              <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            </div>
+            <div class="row products__sidenav-content">
+              <div
+                class="col-lg-12 products__sidenav-color-items product-filter-star"
+              >
+                <div class="product-filter-rating">
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                </div>
+                <span class="review-star">(5 sao)</span>
+              </div>
+              <div
+                class="col-lg-12 products__sidenav-color-items product-filter-star "
+              >
+                <div class="product-filter-rating">
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                </div>
+                <span class="review-star">(4 sao)</span>
+              </div>
+              <div
+                class="col-lg-12 products__sidenav-color-items product-filter-star"
+              >
+                <div class="product-filter-rating">
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                </div>
+                <span class="review-star">(3 sao)</span>
+              </div>
+              <div
+                class="col-lg-12 products__sidenav-color-items product-filter-star"
+              >
+                <div class="product-filter-rating">
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                </div>
+                <span class="review-star">(2 sao)</span>
+              </div>
+              <div
+                class="col-lg-12 products__sidenav-color-items product-filter-star"
+              >
+                <div class="product-filter-rating">
+                  <img src="./img/star-active.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                  <img src="./img/star.png" alt="" />
+                </div>
+                <span class="review-star">(1 sao)</span>
+              </div>
+            </div>
+          </div>
+          <!-- Khoảng giá -->
+          <div class="products__sidenav-price">
+            <h6>Khoảng giá</h6>
+            <div class="products__sidenav-price__form">
+              <div class="form-group mb-0">
+                <input type="text" class="form-control" placeholder="$" />
+              </div>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <div class="form-group mb-0">
+                <input type="text" class="form-control" placeholder="$" />
+              </div>
+            </div>
+            <button type="button" class="btn products__sidenav-price__btn">
+              Tìm kiếm
+            </button>
+          </div>
+        </div>
+        <div class="products__all">
+          <div class="row">
+            <div
+              class="col-md-6 col-xl-4 item floor__slide-item products__all__item"
+            >
+              <div class="products__all__wrap">
+                <div class="floor__img">
+                  <img src="./img/floor-1.png" alt="" />
+                </div>
+                <div class="floor__sale d-flex products__all-sale">
+                  <span class="m-auto">-20%</span>
+                </div>
+                <div class="floor__detail mt-3">
+                  <div class="best-seller">
+                    <img src="./img/best-seller.png" alt="" />
+                  </div>
+                  <div class="floor__detail-brand d-flex mb-2">
+                    <img src="./img/floor-title.png" alt="" />
+                    <img
+                      class="product-new"
+                      src="./img/product-new.png"
+                      alt=""
+                    />
+                    <h4 class="mb-0">Thương hiệu Phào 1</h4>
+                  </div>
+                  <div class="floor__detail-price">
+                    <span>90.000đ</span>
+                  </div>
+                  <div class="floor__detail-price-default">
+                    <strike>100.000đ</strike>
+                  </div>
+                  <div class="floor__detail-title d-flex">
+                    <h3 class="mb-0 mr-3">Sàn gỗ 1</h3>
+                    <div class="floor__detail-rating">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="floor__detail-process d-flex">
+                    <div class="floor__detail-sold d-flex mr-3">
+                      <h4 class="mb-0">Đã bán</h4>
+                      <div class="progress w-100">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          aria-valuenow="70"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width:70%"
+                        >
+                          <span class="sr-only">70% Complete</span>
+                        </div>
+                      </div>
+                      <h5 class="mb-0">70/100</h5>
+                    </div>
+                    <img src="./img/sold.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-6  col-xl-4 item floor__slide-item products__all__item"
+            >
+              <div class="products__all__wrap">
+                <div class="floor__img">
+                  <img src="./img/floor-1.png" alt="" />
+                </div>
+                <div class="floor__sale d-flex products__all-sale">
+                  <span class="m-auto">-20%</span>
+                </div>
+                <div class="floor__detail mt-3">
+                  <div class="best-seller">
+                    <img src="./img/best-seller.png" alt="" />
+                  </div>
+                  <div class="floor__detail-brand d-flex mb-2">
+                    <img src="./img/floor-title.png" alt="" />
+                    <img
+                      class="product-new"
+                      src="./img/product-new.png"
+                      alt=""
+                    />
+                    <h4 class="mb-0">Thương hiệu Phào 1</h4>
+                  </div>
+                  <div class="floor__detail-price">
+                    <span>90.000đ</span>
+                  </div>
+                  <div class="floor__detail-price-default">
+                    <strike>100.000đ</strike>
+                  </div>
+                  <div class="floor__detail-title d-flex">
+                    <h3 class="mb-0 mr-3">Sàn gỗ 1</h3>
+                    <div class="floor__detail-rating">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="floor__detail-process d-flex">
+                    <div class="floor__detail-sold d-flex mr-3">
+                      <h4 class="mb-0">Đã bán</h4>
+                      <div class="progress w-100">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          aria-valuenow="70"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width:70%"
+                        >
+                          <span class="sr-only">70% Complete</span>
+                        </div>
+                      </div>
+                      <h5 class="mb-0">70/100</h5>
+                    </div>
+                    <img src="./img/sold.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-6  col-xl-4 item floor__slide-item products__all__item"
+            >
+              <div class="products__all__wrap">
+                <div class="floor__img">
+                  <img src="./img/floor-1.png" alt="" />
+                </div>
+                <div class="floor__sale d-flex products__all-sale">
+                  <span class="m-auto">-20%</span>
+                </div>
+                <div class="floor__detail mt-3">
+                  <div class="best-seller">
+                    <img src="./img/best-seller.png" alt="" />
+                  </div>
+                  <div class="floor__detail-brand d-flex mb-2">
+                    <img src="./img/floor-title.png" alt="" />
+                    <img
+                      class="product-new"
+                      src="./img/product-new.png"
+                      alt=""
+                    />
+                    <h4 class="mb-0">Thương hiệu Phào 1</h4>
+                  </div>
+                  <div class="floor__detail-price">
+                    <span>90.000đ</span>
+                  </div>
+                  <div class="floor__detail-price-default">
+                    <strike>100.000đ</strike>
+                  </div>
+                  <div class="floor__detail-title d-flex">
+                    <h3 class="mb-0 mr-3">Sàn gỗ 1</h3>
+                    <div class="floor__detail-rating">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="floor__detail-process d-flex">
+                    <div class="floor__detail-sold d-flex mr-3">
+                      <h4 class="mb-0">Đã bán</h4>
+                      <div class="progress w-100">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          aria-valuenow="70"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width:70%"
+                        >
+                          <span class="sr-only">70% Complete</span>
+                        </div>
+                      </div>
+                      <h5 class="mb-0">70/100</h5>
+                    </div>
+                    <img src="./img/sold.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-6  col-xl-4 item floor__slide-item products__all__item"
+            >
+              <div class="products__all__wrap">
+                <div class="floor__img">
+                  <img src="./img/floor-1.png" alt="" />
+                </div>
+                <div class="floor__sale d-flex products__all-sale">
+                  <span class="m-auto">-20%</span>
+                </div>
+                <div class="floor__detail mt-3">
+                  <div class="best-seller">
+                    <img src="./img/best-seller.png" alt="" />
+                  </div>
+                  <div class="floor__detail-brand d-flex mb-2">
+                    <img src="./img/floor-title.png" alt="" />
+                    <img
+                      class="product-new"
+                      src="./img/product-new.png"
+                      alt=""
+                    />
+                    <h4 class="mb-0">Thương hiệu Phào 1</h4>
+                  </div>
+                  <div class="floor__detail-price">
+                    <span>90.000đ</span>
+                  </div>
+                  <div class="floor__detail-price-default">
+                    <strike>100.000đ</strike>
+                  </div>
+                  <div class="floor__detail-title d-flex">
+                    <h3 class="mb-0 mr-3">Sàn gỗ 1</h3>
+                    <div class="floor__detail-rating">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="floor__detail-process d-flex">
+                    <div class="floor__detail-sold d-flex mr-3">
+                      <h4 class="mb-0">Đã bán</h4>
+                      <div class="progress w-100">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          aria-valuenow="70"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width:70%"
+                        >
+                          <span class="sr-only">70% Complete</span>
+                        </div>
+                      </div>
+                      <h5 class="mb-0">70/100</h5>
+                    </div>
+                    <img src="./img/sold.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-6 col-xl-4 item floor__slide-item products__all__item"
+            >
+              <div class="products__all__wrap">
+                <div class="floor__img">
+                  <img src="./img/floor-1.png" alt="" />
+                </div>
+                <div class="floor__sale d-flex products__all-sale">
+                  <span class="m-auto">-20%</span>
+                </div>
+                <div class="floor__detail mt-3">
+                  <div class="best-seller">
+                    <img src="./img/best-seller.png" alt="" />
+                  </div>
+                  <div class="floor__detail-brand d-flex mb-2">
+                    <img src="./img/floor-title.png" alt="" />
+                    <img
+                      class="product-new"
+                      src="./img/product-new.png"
+                      alt=""
+                    />
+                    <h4 class="mb-0">Thương hiệu Phào 1</h4>
+                  </div>
+                  <div class="floor__detail-price">
+                    <span>90.000đ</span>
+                  </div>
+                  <div class="floor__detail-price-default">
+                    <strike>100.000đ</strike>
+                  </div>
+                  <div class="floor__detail-title d-flex">
+                    <h3 class="mb-0 mr-3">Sàn gỗ 1</h3>
+                    <div class="floor__detail-rating">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="floor__detail-process d-flex">
+                    <div class="floor__detail-sold d-flex mr-3">
+                      <h4 class="mb-0">Đã bán</h4>
+                      <div class="progress w-100">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          aria-valuenow="70"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="width:70%"
+                        >
+                          <span class="sr-only">70% Complete</span>
+                        </div>
+                      </div>
+                      <h5 class="mb-0">70/100</h5>
+                    </div>
+                    <img src="./img/sold.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---------------Footer-------------------->
+    <footer id="footer" class="d-flex">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-8 col-sm-8 col-12">
+            <img src="./img/logo-white.png" alt="" />
+            <div class="footer__info">
+              <h5 class="company__name mb-4">
+                Công Ty Cổ phần Sản xuất Havitech
+              </h5>
+              <div class="footer__flex footer__info-address mb-2">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <h5>
+                  Tầng 2, Tòa nhà Vinaconex 7, 61 đường K2, Phường Cầu Diễn,
+                  Quận Nam Từ Liêm, Hà Nội
+                </h5>
+              </div>
+              <div class="footer__flex footer__info-address mb-2">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <h5>Hotline 1: 0912.888.112 (Mr Tú)</h5>
+              </div>
+              <div class="footer__flex footer__info-address mb-2">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <h5>Hotline 2: 0399.799.888</h5>
+              </div>
+              <div class="footer__flex footer__info-address">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <h5>Email: Havitech.jsc@gmail.com</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-8 col-12">
+            <div class="footer__social">
+              <h4 class="">Follow us</h4>
+              <div class="footer__social-icon">
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+              </div>
+              <h4>Sign Up To Newsletter</h4>
+            </div>
+            <div class="footer__form">
+              <input type="text" placeholder="Enter your email" />
+              <button>Subcribe</button>
+            </div>
+            <iframe
+              class="footer__map w-100"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.970298873882!2d105.75762525126513!3d21.03387438592696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454be0c21e133%3A0x1ee532717853b099!2zVG_DoCBuaMOgIFZJTkFDT05FWCA3!5e0!3m2!1svi!2s!4v1585417631526!5m2!1svi!2s"
+              width="300"
+              height="200"
+              frameborder="0"
+              style="border:0;"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!---------------Copyright-------------------->
+    <section id="copyright" class="d-flex">
+      <span>Copyright © 2020 Vfloor Company. All rights reserved.</span>
+    </section>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="./js/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

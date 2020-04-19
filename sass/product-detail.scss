@@ -207,7 +207,7 @@
 // --------Comment---------
 .comment {
   background-color: $color-white;
-  padding: 43px 0;
+  padding: 43px 120px;
   border-top: 0.5px solid #d5d5d5;
   font-family: $font-family;
   &__rating {
@@ -236,7 +236,7 @@
       .social__icon {
         color: $color-main;
         i {
-          margin-right: 17px;
+          margin-right: 15px;
         }
       }
     }
@@ -267,13 +267,30 @@
       .active {
         border-color: unset;
         border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-
-        // font-weight: 600;
       }
     }
     // .comment__tab__item:active {
     //   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
     // }
+  }
+  .contact-mobile {
+    justify-content: center;
+    padding: 60px 0;
+    &__content {
+      background-color: $color-main;
+      color: $color-white;
+      text-align: center;
+      padding: 40px;
+      h6 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
   }
 }
 
@@ -332,6 +349,9 @@
         flex-basis: 100%;
       }
     }
+  }
+  .comment {
+    padding: 0 46px;
   }
 }
 
@@ -444,6 +464,22 @@
         top: -16px;
         left: 8px;
         right: 8px;
+      }
+    }
+  }
+
+  .comment {
+    padding: 20px 20px;
+    &__form {
+      &-submit {
+        button {
+          padding: 6px 20px;
+        }
+        .social__icon {
+          i {
+            margin-right: 8px;
+          }
+        }
       }
     }
   }

@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./product.scss";
 @import "./product-detail.scss";
 
 *,
@@ -13,7 +14,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin-bottom: 0;
 }
 
@@ -25,13 +27,13 @@ body {
   color: #777777;
   background-color: #e5e5e5;
   box-sizing: border-box;
+  margin-top: $appbar-height;
 }
 /* -----Header------- */
 .header {
   background-color: #fff !important;
-  height: 64px;
+  height: $appbar-height;
   padding: 0 120px;
-  // position: relative;
   #menu {
     outline: none;
   }
@@ -394,11 +396,16 @@ body {
       right: 0;
     }
   }
+  .floor__detail-brand {
+    img {
+      width: 21px;
+      height: 18px;
+      margin-right: 6px;
+      object-fit: cover;
+    }
+  }
   &-brand {
     img {
-      width: 21px !important;
-      height: 18px;
-      margin-right: 10px;
     }
     h4 {
       font-size: 15px;
@@ -451,6 +458,7 @@ body {
     font-weight: 300;
     color: $color-price-init;
     justify-content: space-between;
+    align-items: center;
     h4 {
       font-size: 14px;
     }
@@ -664,12 +672,20 @@ body {
       font-size: 14px;
       padding: 10px 16px;
     }
-
     input[type="text"]:focus {
       width: 100%;
       max-width: 125px;
       background-position: bottom 10px right 10px;
       padding-right: 20px;
+    }
+  }
+  .floor_ {
+    &__slide {
+      padding: 50px 54px 73px;
+      background-color: #fff;
+    }
+    &__title {
+      padding: 20px 50px;
     }
   }
 }
