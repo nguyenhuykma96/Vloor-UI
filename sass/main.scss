@@ -1,6 +1,7 @@
 @import "./variables.scss";
 @import "./product.scss";
 @import "./product-detail.scss";
+@import "./cart.scss";
 
 *,
 *::before,
@@ -83,6 +84,15 @@ body {
   &--cart {
     font-size: 20px;
     position: relative;
+    color: $color-main;
+    &:hover {
+      color: $color-main-light;
+      text-decoration: none;
+      span {
+        color: $color-main-light;
+        border-color: $color-main-light;
+      }
+    }
     span {
       font-size: 10px;
       height: 12px;

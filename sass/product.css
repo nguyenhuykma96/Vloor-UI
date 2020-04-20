@@ -314,6 +314,29 @@
   transition: 0.3s all;
 }
 
+.pagination {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination .page-item {
+  color: #505050;
+}
+
+.pagination .page-link {
+  border: unset;
+  color: #505050;
+  font-size: 14px;
+}
+
+.pagination .page-link:hover {
+  background-color: transparent;
+  color: #27ae60;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
 @media screen and (min-width: 1900px) {
   .products__all__wrap {
     padding: 8px;
