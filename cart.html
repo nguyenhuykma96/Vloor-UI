@@ -121,35 +121,34 @@
 
     <!---------------Cart-------------------->
     <section class="container-fluid cart__wrap">
-      <div class="cart__container">
-        <table
-          id="dtMaterialDesignExample"
-          class="table"
-          cellspacing="0"
-          width="100%"
-        >
+      <div class="cart__container table-responsive">
+        <table id="cart-table" class="table" cellspacing="0" width="100%">
           <thead>
             <tr class="cart__header">
               <th class="th-sm content-start">Sản phẩm</th>
-              <th class="th-sm content-center">Size</th>
+              <th class="th-sm content-center cart__item-none">Size</th>
               <th class="th-sm content-center">Màu sắc</th>
               <th class="th-sm content-center">Số lượng</th>
               <th class="th-sm content-center">Giá</th>
-              <th class="th-sm"></th>
+              <th class="th-sm cart__item-none"></th>
             </tr>
           </thead>
           <tbody>
             <tr class="cart__item">
               <td class="cart__item-td cart__item-product content-start">
                 <div class="cart__item-img">
-                  <img src="./img/product-detail.png" alt="" />
+                  <img src="./img/cart-img.png" alt="" />
                 </div>
                 <div class="cart__item-name">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
+                  <h6 class="mb-2">Sàn SPC vân gỗ VFloor V402</h6>
+                  <span class=" mb-2">SKU : 8863</span>
+                  <!-- Only < 992px -->
+                  <span class="d-lg-none">1x1m</span>
                 </div>
               </td>
-              <td class="cart__item-td content-center">1x1m</td>
+              <td class="cart__item-td content-center cart__item-none">
+                <span class=" product-size">1x1m</span>
+              </td>
               <td class="cart__item-td content-center cart__item-color">
                 <span
                   class="rounded-circle"
@@ -157,89 +156,47 @@
                 ></span>
               </td>
               <td class="cart__item-td content-center">1</td>
-              <td class="cart__item-td content-center">200.000 vnđ</td>
-              <td class="cart__item-td content-center td-delete">
+              <td class="cart__item-td content-center content-right-lg">
+                <span>200.000 vnđ</span>
+                <!-- Only < 992px -->
                 <button type="button" class="btn">Xóa</button>
-              </td>
-            </tr>
-            <tr class="cart__item">
-              <td class="cart__item-td cart__item-product content-start">
-                <div class="cart__item-img">
-                  <img src="./img/product-detail.png" alt="" />
-                </div>
-                <div class="cart__item-name">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
-                </div>
-              </td>
-              <td class="cart__item-td content-center">1x1m</td>
-              <td class="cart__item-td content-center cart__item-color">
-                <span
-                  class="rounded-circle"
-                  style="background-color: #E7C59C;"
-                ></span>
-              </td>
-              <td class="cart__item-td content-center">1</td>
-              <td class="cart__item-td content-center">200.000 vnđ</td>
-              <td class="cart__item-td content-center td-delete">
-                <button type="button" class="btn">Xóa</button>
-              </td>
-            </tr>
-            <tr class="cart__item">
-              <td class="cart__item-td cart__item-product content-start">
-                <div class="cart__item-img">
-                  <img src="./img/product-detail.png" alt="" />
-                </div>
-                <div class="cart__item-name">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
-                </div>
-              </td>
-              <td class="cart__item-td content-center">1x1m</td>
-              <td class="cart__item-td content-center cart__item-color">
-                <span
-                  class="rounded-circle"
-                  style="background-color: #E7C59C;"
-                ></span>
-              </td>
-              <td class="cart__item-td content-center">1</td>
-              <td class="cart__item-td content-center">200.000 vnđ</td>
-              <td class="cart__item-td content-center td-delete">
-                <button type="button" class="btn">Xóa</button>
-              </td>
-            </tr>
-            <tr class="cart__footer">
-              <td class="cart__footer-td cart__saleOff content-start">
-                <div class="cart__discount">
-                  <div class="cart__discount-title">
-                    <h5>Mã giảm giá</h5>
-                    <a href="#">Chọn mã giảm giá</a>
-                  </div>
-                  <input type="text" />
-                </div>
-                <button type="button" class="btn">Áp dụng</button>
-              </td>
-
-              <td class="cart__footer-td"></td>
-              <td class="cart__footer-td"></td>
-              <td class="cart__footer-td "></td>
-
-              <td class="cart__item-td cart__footer-td cart__total">
-                <h6>Tổng tiền hàng</h6>
-                <h6>Tiền vận chuyển</h6>
-                <h6>Tổng thanh toán</h6>
               </td>
               <td
-                class="cart__item-td cart__footer-td cart__total cart__total-money"
+                class="cart__item-td content-center td-delete cart__item-none"
               >
-                <h6>1.850.000 vnđ</h6>
-                <h6>0</h6>
-                <h6>1.850.000 vnđ</h6>
-                <span>*Đã bao gồm thuế VAT</span>
+                <button type="button" class="btn">Xóa</button>
               </td>
             </tr>
           </tbody>
         </table>
+
+        <div class="cart__footer">
+          <div class="cart__footer-td cart__saleOff content-start">
+            <div class="cart__discount">
+              <div class="cart__discount-title">
+                <h5>Mã giảm giá</h5>
+                <a href="#">Chọn mã giảm giá</a>
+              </div>
+              <input type="text" />
+            </div>
+            <button type="button" class="btn">Áp dụng</button>
+          </div>
+
+          <div class="cart__footer-total">
+            <div class="cart__total cart__total-title">
+              <h6>Tổng tiền hàng</h6>
+              <h6>Tiền vận chuyển</h6>
+              <h6 class="mb-0">Tổng thanh toán</h6>
+            </div>
+            <div class="cart__total cart__total-money">
+              <h6>1.850.000 vnđ</h6>
+              <h6>0</h6>
+              <h6 class="mb-0">1.850.000 vnđ</h6>
+              <span>*Đã bao gồm thuế VAT</span>
+            </div>
+          </div>
+        </div>
+
         <div class="cart__action">
           <button type="button" class="btn cart__btn-shopping">
             Mua sắm tiếp
@@ -325,11 +282,10 @@
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>
     <script src="./js/main.js"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function() {
-        $("#dtBasicExample").DataTable();
-        $(".dataTables_length").addClass("bs-select");
+        $("#cart-table").DataTable();
       });
-    </script>
+    </script> -->
   </body>
 </html>

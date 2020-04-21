@@ -42,6 +42,7 @@ $(document).ready(function() {
   $(brand).click(function() {
     $(this).toggleClass("active");
   });
+
   if ($(window).width() < 576) {
     var widthSelect = $(".brand__select-color").width();
     $(".select-color").css({
@@ -49,6 +50,7 @@ $(document).ready(function() {
     });
     $("#input-select-color").empty("");
   }
+
   $(window).resize(function() {
     var width = $(window).width();
 
