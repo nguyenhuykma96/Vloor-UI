@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;500&family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vloor Checkout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"
+    />
+
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="owlcarousel/assets/owl.theme.default.min.css"
+    />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!---------------Header-------------------->
+    <nav class="navbar navbar-expand-lg  fixed-top bg-light  header">
+      <a href="/home"><img src="./img/logo.png" alt=""/></a>
+      <div
+        class="collapse navbar-collapse nav "
+        id="navbarCollapse"
+        onblur="_handleOnBlur();"
+      >
+        <div class="col social ">
+          <div class="social__icon">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+          </div>
+        </div>
+        <ul class="navbar-nav mr-auto nav__list">
+          <li class="nav-item active nav__item  ">
+            <img class="show-icon" src="./img/home.png" alt="" />
+            <a class="nav-link" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item nav__item">
+            <img class="show-icon" src="./img/about-us.png" alt="" />
+            <a class="nav-link" href="#">Giới thiệu</a>
+          </li>
+          <li
+            id="nav__product"
+            class="nav-item dropdown nav__item nav__product "
+          >
+            <div class="nav__product-main">
+              <img class="show-icon" src="./img/product.png" alt="" />
+              <a class="nav-link" href="#">
+                Sản phẩm
+              </a>
+              <i
+                id="product-dropdown"
+                class="fa fa-chevron-right show-icon "
+                aria-hidden="true"
+                onclick="myFunction()"
+              ></i>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu">
+              <a class="dropdown-item" href="#">Sàn</a>
+              <a class="dropdown-item" href="#">Phào</a>
+              <a class="dropdown-item" href="#">Nẹp</a>
+              <a class="dropdown-item" href="#">Dịch vụ thi công | Lắp đặt</a>
+            </div>
+          </li>
+          <li class="nav-item nav__item">
+            <img class="show-icon" src="./img/contact.png" alt="" />
+            <a class="nav-link" href="#">Liên hệ</a>
+          </li>
+        </ul>
+
+        <div class="login">
+          <i class="fa fa-user-circle-o show-icon " aria-hidden="true"></i>
+          <a class="nav__login" href="/login">Đăng nhập</a>
+        </div>
+      </div>
+
+      <div class="nav__icon">
+        <form class="mt-md-0 form-search">
+          <input
+            class="form-control mr-sm-2 form-input"
+            type="text"
+            placeholder="Search"
+          />
+        </form>
+        <a
+          href="/cart.html"
+          class="fa fa-shopping-cart nav__icon--cart"
+          aria-hidden="true"
+          ><span>4</span></a
+        >
+      </div>
+      <button
+        id="menu"
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa fa-bars nav__icon--menu" aria-hidden="true"></i>
+      </button>
+    </nav>
+    <div class="container-fluid cart__title">
+      <img src="./img/circle.png" alt="" />
+      <h3>Thanh toán</h3>
+    </div>
+    <!---------------Payment-------------------->
+    <section class="payment">
+      <div class="container-fuild payment__wrap">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="method-shipping">
+              <h4 class="payment__title">Phương thức vận chuyển</h4>
+              <div class="col-lg-12 payment__content">
+                <div class="payment__content-wrap">
+                  <input
+                    class="styled-checkbox"
+                    id="cart-checkbox"
+                    type="checkbox"
+                    value="value2"
+                    checked
+                  />
+                  <div class="shipping-content">
+                    <label class="mb-0" for="cart-checkbox"
+                      >Vận chuyển thông thường</label
+                    >
+                    <span>Khoảng 2-4 ngày</span>
+                  </div>
+                </div>
+                <span class="text-color-main">FREE</span>
+              </div>
+              <div class="col-lg-12 payment__content">
+                <div class="payment__content-wrap">
+                  <input
+                    class="styled-checkbox"
+                    id="cart-checkbox-2"
+                    type="checkbox"
+                    value="value2"
+                  />
+                  <div class="shipping-content">
+                    <label class="mb-0" for="cart-checkbox-2"
+                      >Giao hàng nhanh</label
+                    >
+                    <span>Khoảng 1-2 ngày</span>
+                  </div>
+                </div>
+                <span class="text-color-main">10.000 vnđ</span>
+              </div>
+            </div>
+            <div class="payment-address">
+              <h4 class="payment__title">Chọn địa chỉ đã đăng ký</h4>
+              <div class="col-lg-12 payment__content">
+                <div class="payment__content-wrap">
+                  <input
+                    class="styled-checkbox"
+                    id="cart-checkbox-3"
+                    type="checkbox"
+                    value="value2"
+                    checked
+                  />
+                  <div class="shipping-content">
+                    <label class="mb-0" for="cart-checkbox-3"
+                      >Bùi Thanh Tùng</label
+                    >
+                    <span>LK6B Mộ Lao, Hà Đông, Hà Nội, Việt Nam</span>
+                    <span>+84 0969 182 968</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 payment__content">
+                <div class="payment__content-wrap">
+                  <input
+                    class="styled-checkbox"
+                    id="cart-checkbox-4"
+                    type="checkbox"
+                    value="value2"
+                  />
+                  <div class="shipping-content">
+                    <label class="mb-0" for="cart-checkbox-4"
+                      >Bùi Thanh Tùng</label
+                    >
+                    <span>LK6B Mộ Lao, Hà Đông, Hà Nội, Việt Nam</span>
+                    <span>+84 0969 182 968</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="payment-newAddress col-lg-9">
+              <h4 class="payment__title payment-newAddress__title">
+                Địa chỉ mới
+              </h4>
+              <form class="form-address" action="#">
+                <div class="row">
+                  <div class="col-lg-6 first-name">
+                    <input
+                      type="text"
+                      class="form-control form-control-md"
+                      placeholder="Họ"
+                    />
+                  </div>
+                  <div class="col-lg-6 last-name">
+                    <input
+                      type="text"
+                      class="form-control form-control-md"
+                      placeholder="Tên"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12 address">
+                    <input
+                      type="text"
+                      class="form-control form-control-md"
+                      placeholder="Địa chỉ"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 email">
+                    <input
+                      type="text"
+                      class="form-control form-control-md"
+                      placeholder="email"
+                    />
+                  </div>
+                  <div class="col-lg-6 phone">
+                    <input
+                      type="text"
+                      class="form-control form-control-md"
+                      placeholder="Số điện thoại"
+                    />
+                  </div>
+                </div>
+                <div class="payment__content-wrap ">
+                  <input
+                    class="styled-checkbox"
+                    id="address-default-ckb"
+                    type="checkbox"
+                    value="value2"
+                  />
+                  <div class="shipping-content address-default">
+                    <label class="mb-0 " for="address-default-ckb"
+                      >Đặt làm địa chỉ mặc định</label
+                    >
+                  </div>
+                </div>
+                <div class="payment-newAddress__action">
+                  <button type="submit" class="">Lưu</button>
+                  <button type="button" class="">Hủy</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h4 class="payment__title">Giỏ hàng</h4>
+            <div class="cart-items">
+              <div class="cart-item">
+                <img src="./img/cart-img.png" alt="" />
+                <div class="cart-item-info">
+                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
+                  <span>SKU : 8863</span>
+                  <span>Size: 1x1m</span>
+                </div>
+                <span
+                  class="rounded-circle"
+                  style="background-color: #E7C59C;"
+                ></span>
+                <span class="cart-item-money">200.000 vnđ</span>
+              </div>
+              <div class="cart-item">
+                <img src="./img/cart-img.png" alt="" />
+                <div class="cart-item-info">
+                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
+                  <span>SKU : 8863</span>
+                  <span>Size: 1x1m</span>
+                </div>
+                <span
+                  class="rounded-circle"
+                  style="background-color: #E7C59C;"
+                ></span>
+                <span class="cart-item-money">200.000 vnđ</span>
+              </div>
+              <div class="cart-item">
+                <img src="./img/cart-img.png" alt="" />
+                <div class="cart-item-info">
+                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
+                  <span>SKU : 8863</span>
+                  <span>Size: 1x1m</span>
+                </div>
+                <span
+                  class="rounded-circle"
+                  style="background-color: #E7C59C;"
+                ></span>
+                <span class="cart-item-money">200.000 vnđ</span>
+              </div>
+              <div class="cart-item">
+                <img src="./img/cart-img.png" alt="" />
+                <div class="cart-item-info">
+                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
+                  <span>SKU : 8863</span>
+                  <span>Size: 1x1m</span>
+                </div>
+                <span
+                  class="rounded-circle"
+                  style="background-color: #E7C59C;"
+                ></span>
+                <span class="cart-item-money">200.000 vnđ</span>
+              </div>
+            </div>
+            <div class="total-money">
+              <div class="cart__footer-total">
+                <div class="cart__total cart__total-title">
+                  <h6>Tổng tiền hàng</h6>
+                  <h6>Tiền vận chuyển</h6>
+                  <h6 class="mb-0">Tổng thanh toán</h6>
+                </div>
+                <div class="cart__total cart__total-money">
+                  <h6>1.850.000 vnđ</h6>
+                  <h6>0</h6>
+                  <h6 class="mb-0">1.850.000 vnđ</h6>
+                  <span>*Đã bao gồm thuế VAT</span>
+                </div>
+              </div>
+            </div>
+            <button class="btn-buy" type="button">Mua hàng</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------Footer-------------------->
+    <footer id="footer" class="d-flex">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-8 col-sm-8 col-12">
+            <img src="./img/logo-white.png" alt="" />
+            <div class="footer__info">
+              <h5 class="company__name mb-4">
+                Công Ty Cổ phần Sản xuất Havitech
+              </h5>
+              <div class="footer__flex footer__info-address mb-2">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <h5>
+                  Tầng 2, Tòa nhà Vinaconex 7, 61 đường K2, Phường Cầu Diễn,
+                  Quận Nam Từ Liêm, Hà Nội
+                </h5>
+              </div>
+              <div class="footer__flex footer__info-address mb-2">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <h5>Hotline 1: 0912.888.112 (Mr Tú)</h5>
+              </div>
+              <div class="footer__flex footer__info-address mb-2">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <h5>Hotline 2: 0399.799.888</h5>
+              </div>
+              <div class="footer__flex footer__info-address">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <h5>Email: Havitech.jsc@gmail.com</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-8 col-12">
+            <div class="footer__social">
+              <h4 class="">Follow us</h4>
+              <div class="footer__social-icon">
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+              </div>
+              <h4>Sign Up To Newsletter</h4>
+            </div>
+            <div class="footer__form">
+              <input type="text" placeholder="Enter your email" />
+              <button>Subcribe</button>
+            </div>
+            <iframe
+              class="footer__map w-100"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.970298873882!2d105.75762525126513!3d21.03387438592696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454be0c21e133%3A0x1ee532717853b099!2zVG_DoCBuaMOgIFZJTkFDT05FWCA3!5e0!3m2!1svi!2s!4v1585417631526!5m2!1svi!2s"
+              width="300"
+              height="200"
+              frameborder="0"
+              style="border:0;"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!---------------Copyright-------------------->
+    <section id="copyright" class="d-flex">
+      <span>Copyright © 2020 Vfloor Company. All rights reserved.</span>
+    </section>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="./js/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+@import "./variables.scss";
+
+.payment {
+  background-color: $color-white;
+  padding-bottom: 200px;
+  &__wrap {
+    padding: 0 205px;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-main;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  &__content {
+    padding-bottom: 20px;
+    @include flex(flex, row, space-between, center);
+    &-wrap {
+      @include flex(flex, row, flex-start, flex-start);
+      .custom-checkbox {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.method-shipping {
+  border-bottom: 1px solid $color-border-1;
+}
+.shipping-content {
+  @include flex(flex, column, flex-start, flex-start);
+  label {
+    font-weight: 600;
+    color: #6d6b6b;
+  }
+  span {
+    margin-left: 30px;
+  }
+}
+.text-color-main {
+  color: $color-main;
+  font-weight: 600;
+}
+
+.styled-checkbox {
+  position: absolute; // take it out of document flow
+  display: none;
+
+  & + .shipping-content label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + .shipping-content label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: $color-white;
+    border: 2px solid $color-main;
+  }
+
+  // Box checked
+  &:checked + .shipping-content label:before {
+    background: $color-white;
+  }
+
+  // Disabled state label.
+  &:disabled + .shipping-content label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + .shipping-content label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + .shipping-content label:after {
+    font-family: "FontAwesome";
+    content: "\f0c8";
+    // background: url("../img/square.png") 0 0px no-repeat;
+    color: #27ae60;
+    font-size: 12px;
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    background: transparent;
+  }
+}
+.form-address {
+  .row {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 100%;
+    border-radius: unset;
+    &::placeholder {
+      color: #979292;
+      font-size: 13px;
+    }
+  }
+}
+.address-default {
+  label {
+    font-weight: 400;
+    font-size: 13px;
+  }
+}
+.payment-newAddress {
+  &__title {
+    font-size: 18px;
+  }
+  &__action {
+    margin-top: 30px;
+    button {
+      font-size: 14px;
+      font-weight: 600;
+      color: #3d3b3b;
+      border: 1px solid #27ae60;
+      box-sizing: border-box;
+      border-radius: unset;
+      width: 100px;
+      height: 30px;
+      text-align: center;
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+.cart-item {
+  @include flex(flex, row, space-between, flex-start);
+  border-bottom: 1px solid $color-border-1;
+  padding-bottom: 20px;
+  padding-top: 25px;
+  .rounded-circle {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+  }
+  &-info {
+    @include flex(flex, column, space-between, flex-start);
+    h6 {
+      font-weight: 600;
+    }
+    span {
+    }
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  &-money {
+    color: $color-main;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+.btn-main {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  background-color: $color-main;
+}
+.total-money {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  .cart__total-title {
+    text-align: left;
+  }
+}
+.btn-buy {
+  @extend .btn-main;
+  width: 470px;
+}

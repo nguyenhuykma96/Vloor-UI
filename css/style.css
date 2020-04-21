@@ -742,17 +742,23 @@
     text-transform: uppercase;
     border: 1px solid #27ae60;
     background-color: #ffffff;
-    text-align: center;
     border-radius: unset;
-    width: 200px; }
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
   .cart__action .cart__btn-payment {
     text-transform: uppercase;
     color: #ffffff;
     font-size: 24px;
     background-color: #27ae60;
     border-radius: unset;
-    text-align: center;
-    width: 430px; }
+    width: 430px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
 
 @media screen and (max-width: 1400px) {
   .cart__title {
@@ -819,6 +825,167 @@
 @media screen and (max-width: 576px) {
   .cart__title {
     padding: 12px 26px; } }
+
+.payment {
+  background-color: #ffffff;
+  padding-bottom: 200px; }
+  .payment__wrap {
+    padding: 0 205px; }
+  .payment__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #27ae60;
+    margin-bottom: 30px;
+    margin-top: 30px; }
+  .payment__content {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .payment__content-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start; }
+      .payment__content-wrap .custom-checkbox {
+        margin-right: 20px; }
+
+.method-shipping {
+  border-bottom: 1px solid #c4c4c4; }
+
+.shipping-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  .shipping-content label {
+    font-weight: 600;
+    color: #6d6b6b; }
+  .shipping-content span {
+    margin-left: 30px; }
+
+.text-color-main {
+  color: #27ae60;
+  font-weight: 600; }
+
+.styled-checkbox {
+  position: absolute;
+  display: none; }
+  .styled-checkbox + .shipping-content label {
+    position: relative;
+    cursor: pointer;
+    padding: 0; }
+  .styled-checkbox + .shipping-content label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #27ae60; }
+  .styled-checkbox:checked + .shipping-content label:before {
+    background: #ffffff; }
+  .styled-checkbox:disabled + .shipping-content label {
+    color: #b8b8b8;
+    cursor: auto; }
+  .styled-checkbox:disabled + .shipping-content label:before {
+    box-shadow: none;
+    background: #ddd; }
+  .styled-checkbox:checked + .shipping-content label:after {
+    font-family: "FontAwesome";
+    content: "\f0c8";
+    color: #27ae60;
+    font-size: 12px;
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    background: transparent; }
+
+.form-address .row {
+  margin-bottom: 10px; }
+
+.form-address input {
+  width: 100%;
+  border-radius: unset; }
+  .form-address input::placeholder {
+    color: #979292;
+    font-size: 13px; }
+
+.address-default label {
+  font-weight: 400;
+  font-size: 13px; }
+
+.payment-newAddress__title {
+  font-size: 18px; }
+
+.payment-newAddress__action {
+  margin-top: 30px; }
+  .payment-newAddress__action button {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3d3b3b;
+    border: 1px solid #27ae60;
+    box-sizing: border-box;
+    border-radius: unset;
+    width: 100px;
+    height: 30px;
+    text-align: center; }
+    .payment-newAddress__action button:first-child {
+      margin-right: 30px; }
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 20px;
+  padding-top: 25px; }
+  .cart-item .rounded-circle {
+    display: inline-block;
+    width: 27px;
+    height: 27px; }
+  .cart-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; }
+    .cart-item-info h6 {
+      font-weight: 600; }
+  .cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; }
+  .cart-item-money {
+    color: #27ae60;
+    font-weight: 500;
+    font-size: 14px; }
+
+.btn-main, .btn-buy {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  background-color: #27ae60; }
+
+.total-money {
+  padding-top: 50px;
+  margin-bottom: 50px; }
+  .total-money .cart__total-title {
+    text-align: left; }
+
+.btn-buy {
+  width: 470px; }
+
+.btn-main, .btn-buy {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #27ae60;
+  height: 60px; }
 
 *,
 *::before,

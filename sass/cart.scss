@@ -37,13 +37,13 @@
       color: $color-main;
       font-weight: 600;
       border-top: unset;
-      border-bottom: 1px solid #c4c4c4;
+      border-bottom: 1px solid $color-border-1;
     }
   }
 }
 
 .cart__item {
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid $color-border-1;
   .td-delete {
     text-align: right;
     padding-right: unset;
@@ -95,7 +95,7 @@
   }
 }
 .cart__footer {
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid $color-border-1;
   padding-bottom: 20px;
   @include flex(flex, row, space-between, flex-end);
   &-total {
@@ -164,9 +164,9 @@
     text-transform: uppercase;
     border: 1px solid $color-main;
     background-color: $color-white;
-    text-align: center;
     border-radius: unset;
     width: 200px;
+    @include flex(flex, row, center, center);
   }
   .cart__btn-payment {
     text-transform: uppercase;
@@ -174,8 +174,8 @@
     font-size: 24px;
     background-color: $color-main;
     border-radius: unset;
-    text-align: center;
     width: 430px;
+    @include flex(flex, row, center, center);
   }
 }
 
@@ -218,7 +218,7 @@
     &-total {
       flex-basis: 100%;
       width: 100%;
-      border-bottom: 1px solid #c4c4c4;
+      border-bottom: 1px solid $color-border-1;
       padding-bottom: 42px;
     }
   }

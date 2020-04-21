@@ -148,8 +148,12 @@ $(document).ready(function() {
         items: 3,
         nav: true
       },
-      1400: {
+      1280: {
         items: 4,
+        nav: true
+      },
+      1400: {
+        items: 5,
         nav: true
       },
       1900: {

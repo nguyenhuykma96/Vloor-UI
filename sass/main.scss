@@ -2,6 +2,18 @@
 @import "./product.scss";
 @import "./product-detail.scss";
 @import "./cart.scss";
+@import "./checkout.scss";
+
+// COMMONS
+.btn-main {
+  font-size: 24px;
+  font-weight: 600;
+  color: $color-white;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $color-main;
+  height: 60px;
+}
 
 *,
 *::before,
