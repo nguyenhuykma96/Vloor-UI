@@ -122,13 +122,16 @@
     <!---------------Cart-------------------->
     <section class="container-fluid cart__wrap">
       <div class="cart__container table-responsive">
+        <!-- Only tablet and destop -->
         <table id="cart-table" class="table" cellspacing="0" width="100%">
           <thead>
             <tr class="cart__header">
               <th class="th-sm content-start">Sản phẩm</th>
-              <th class="th-sm content-center cart__item-none">Size</th>
-              <th class="th-sm content-center">Màu sắc</th>
+              <th class="th-sm content-center set-width-color">Màu sắc</th>
               <th class="th-sm content-center">Số lượng</th>
+              <th class="th-sm content-center set-width-area">
+                Tổng diện tích(m2)
+              </th>
               <th class="th-sm content-center">Giá</th>
               <th class="th-sm cart__item-none"></th>
             </tr>
@@ -142,12 +145,7 @@
                 <div class="cart__item-name">
                   <h6 class="mb-2">Sàn SPC vân gỗ VFloor V402</h6>
                   <span class=" mb-2">SKU : 8863</span>
-                  <!-- Only < 992px -->
-                  <span class="d-lg-none">1x1m</span>
                 </div>
-              </td>
-              <td class="cart__item-td content-center cart__item-none">
-                <span class=" product-size">1x1m</span>
               </td>
               <td class="cart__item-td content-center cart__item-color">
                 <span
@@ -155,11 +153,22 @@
                   style="background-color: #E7C59C;"
                 ></span>
               </td>
-              <td class="cart__item-td content-center">1</td>
-              <td class="cart__item-td content-center content-right-lg">
+              <td class="cart__item-td content-center cart__item-quantity">
+                <span>-</span>
+                <span>2</span>
+                <span>+</span>
+              </td>
+
+              <td class="cart__item-td content-center">
+                <span class="product-size">1</span>
+              </td>
+
+              <td
+                class="cart__item-td content-center content-right-lg set-width-price"
+              >
                 <span>200.000 vnđ</span>
                 <!-- Only < 992px -->
-                <button type="button" class="btn">Xóa</button>
+                <button type="button" class="btn d-lg-none">Xóa</button>
               </td>
               <td
                 class="cart__item-td content-center td-delete cart__item-none"
@@ -170,28 +179,87 @@
           </tbody>
         </table>
 
-        <div class="cart__footer">
-          <div class="cart__footer-td cart__saleOff content-start">
-            <div class="cart__discount">
-              <div class="cart__discount-title">
-                <h5>Mã giảm giá</h5>
-                <a href="#">Chọn mã giảm giá</a>
+        <!-- Cart for < 768px -->
+        <div class="cart-mobile d-sm-none">
+          <div class="cart-mobile-des">
+            <span class="title-block">1 mặt hàng</span> |
+            <span class="cart-total-money">1.850.000 vnđ</span>
+          </div>
+          <div class="cart-mobile-items">
+            <div class="cart-mobile-item">
+              <div class="cart__item-img">
+                <img src="./img/cart-img.png" alt="" />
               </div>
-              <input type="text" />
+              <div class="cart__item-right">
+                <div class="cart-block cart-mobile-content">
+                  <div class="cart-content-left">
+                    <h5 class="title-block">Sản phẩm</h5>
+                    <p class="mw-75">Sàn SPC vân gỗ VFloor V402</p>
+                    <span>SKU : 8863</span>
+                  </div>
+                  <div class="cart-content-right">
+                    <span>200.000đ</span>
+                    <span
+                      class="rounded-circle"
+                      style="background-color: #E7C59C;"
+                    ></span>
+                  </div>
+                </div>
+                <div class="cart-block cart-mobile-quantity">
+                  <h5 class="title-block">Số lượng</h5>
+                  <div class="cart-product-quantity">
+                    <span>-</span>
+                    <span>2</span>
+                    <span>+</span>
+                  </div>
+                </div>
+                <div class="cart-block cart-mobile-area">
+                  <h5 class="title-block">Tổng diện tích (m2)</h5>
+                  <span>2</span>
+                </div>
+                <button type="button" class="btn-delete">Xóa</button>
+              </div>
             </div>
-            <button type="button" class="btn">Áp dụng</button>
+          </div>
+        </div>
+
+        <div class="cart__footer">
+          <div class="payment__content-container">
+            <div class="payment__content-wrap ">
+              <input
+                class="styled-checkbox"
+                id="cart-ckb"
+                type="checkbox"
+                value="value2"
+              />
+              <div class="shipping-content address-default cart__footer-ckb">
+                <label class="mb-0 label-ckb" for="cart-ckb"
+                  >Thuê công khoán tính thêm 5% phí hao mòn
+                </label>
+              </div>
+            </div>
+            <div class="cart__footer-td cart__saleOff">
+              <div class="cart__discount">
+                <div class="cart__discount-title">
+                  <h5>Mã giảm giá</h5>
+                  <a href="#">Chọn mã giảm giá</a>
+                </div>
+                <input type="text" />
+              </div>
+              <button type="button" class="btn-apply">Áp dụng</button>
+            </div>
           </div>
 
-          <div class="cart__footer-total">
+          <div class=" cart__footer-total">
             <div class="cart__total cart__total-title">
               <h6>Tổng tiền hàng</h6>
               <h6>Tiền vận chuyển</h6>
-              <h6 class="mb-0">Tổng thanh toán</h6>
+              <h6 class="mb-0 text-600">Tổng thanh toán</h6>
             </div>
             <div class="cart__total cart__total-money">
               <h6>1.850.000 vnđ</h6>
               <h6>0</h6>
-              <h6 class="mb-0">1.850.000 vnđ</h6>
+              <h6 class="mb-0 text-600">1.850.000 vnđ</h6>
               <span>*Đã bao gồm thuế VAT</span>
             </div>
           </div>
