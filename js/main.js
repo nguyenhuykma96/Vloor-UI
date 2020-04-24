@@ -44,17 +44,6 @@ $(document).ready(function() {
     $(this).addClass("active");
   });
 
-  $(".carousel-indicators li").click(function() {
-    var index = $(".carousel-indicators-number li.active").attr(
-      "data-slide-to",
-      function() {
-        console.log(index);
-      }
-    );
-  });
-
-  function toggleDots() {}
-
   $win.on("click.Bts", function(e) {
     if ($win.has(e.target).length == 0 && !$nav.is(event.target)) {
     }
