@@ -376,6 +376,10 @@
           align-items: center;
 }
 
+.text-600 {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1400px) {
   .cart__title {
     padding: 25px 66px;
@@ -398,6 +402,9 @@
 @media screen and (max-width: 991.9px) {
   .set-width-price {
     min-width: 105px;
+  }
+  .cart__container {
+    padding: 25px 30px;
   }
   .cart__title {
     padding: 25px 60px;
@@ -492,9 +499,6 @@
 @media screen and (max-width: 767.9px) {
   #cart-table {
     display: none;
-  }
-  .text-600 {
-    font-weight: 600;
   }
   .cart__container {
     padding: 25px 15px;

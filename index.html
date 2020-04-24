@@ -24,15 +24,13 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div id="full-screen"></div>
+    <!-- <div id="full-screen"></div> -->
+    <div id="display-opacity" class="fullWidth-opacity"></div>
+
     <!---------------Header-------------------->
-    <nav class="navbar navbar-expand-lg  fixed-top bg-light  header">
+    <nav class="navbar navbar-expand-lg  fixed-top  header">
       <a href="/home"><img src="./img/logo.png" alt=""/></a>
-      <div
-        class="collapse navbar-collapse nav "
-        id="navbarCollapse"
-        onblur="_handleOnBlur();"
-      >
+      <div class="collapse navbar-collapse nav " id="navbarCollapse">
         <div class="col social ">
           <div class="social__icon">
             <i class="fa fa-youtube-play" aria-hidden="true"></i>
@@ -64,7 +62,6 @@
                 id="product-dropdown"
                 class="fa fa-chevron-right show-icon "
                 aria-hidden="true"
-                onclick="myFunction()"
               ></i>
             </div>
             <div class="dropdown-menu" id="dropdown-menu">
@@ -89,17 +86,54 @@
       <div class="nav__icon">
         <form class="mt-md-0 form-search">
           <input
-            class="form-control mr-sm-2 form-input"
+            class="form-control form-input"
             type="text"
             placeholder="Search"
           />
         </form>
-        <a
-          href="/cart.html"
+        <i
+          id="cart-icon"
           class="fa fa-shopping-cart nav__icon--cart"
           aria-hidden="true"
-          ><span>4</span></a
-        >
+          ><span>4</span>
+        </i>
+        <!-- Cart popup -->
+        <div class="cart-popup">
+          <h5>Sản phẩm vừa thêm</h5>
+          <div class="cart-popup__items">
+            <div class="cart-popup__item">
+              <div class="cart-popup__item-left">
+                <img src="./img/cart-img.png" alt="" class="cart-popup-img" />
+                <h4>Sàn SPC vân gỗ VFloor V402</h4>
+              </div>
+              <div class="cart-popup__item-right">
+                <span>200.000 vnđ</span>
+                <button type="button">Xóa</button>
+              </div>
+            </div>
+            <div class="cart-popup__item">
+              <div class="cart-popup__item-left">
+                <img src="./img/cart-img.png" class="cart-popup-img" alt="" />
+                <h4>Sàn SPC vân gỗ VFloor V402</h4>
+              </div>
+              <div class="cart-popup__item-right">
+                <span>200.000 vnđ</span>
+                <button type="button">Xóa</button>
+              </div>
+            </div>
+            <div class="cart-popup__item">
+              <div class="cart-popup__item-left">
+                <img src="./img/cart-img.png" alt="" class="cart-popup-img" />
+                <h4>Sàn SPC vân gỗ VFloor V402</h4>
+              </div>
+              <div class="cart-popup__item-right">
+                <span>200.000 vnđ</span>
+                <button type="button">Xóa</button>
+              </div>
+            </div>
+            <button type="button" class="view-cart-btn">Xem Giỏ Hàng</button>
+          </div>
+        </div>
       </div>
       <button
         id="menu"
@@ -114,7 +148,6 @@
         <i class="fa fa-bars nav__icon--menu" aria-hidden="true"></i>
       </button>
     </nav>
-    <div id="display"></div>
     <!---------------Slide----------------->
     <section id="slider">
       <div
@@ -168,7 +201,6 @@
               <button class="carousel__content-button">Mua sắm ngay</button>
             </div>
           </div>
-
           <div class="carousel-item">
             <img
               class="d-block w-100"
@@ -661,7 +693,8 @@
     </section>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="./js/jquery-3.2.1.slim.min.js"></script>
+    <!-- <script src="./js/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="./js/popper.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>

@@ -94,6 +94,7 @@
       }
       i {
         cursor: pointer;
+        transition: all 0.3s;
       }
     }
     &-content {
@@ -180,7 +181,7 @@
 }
 .rotate-180 {
   transform: rotate(180deg);
-  transition: 0.3s all;
+  transition: all 0.3s;
 }
 // pagination
 .pagination {

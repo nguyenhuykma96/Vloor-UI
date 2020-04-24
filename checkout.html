@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <div id="display-opacity" class="fullWidth-opacity"></div>
     <!---------------Header-------------------->
     <nav class="navbar navbar-expand-lg  fixed-top bg-light  header">
       <a href="/home"><img src="./img/logo.png" alt=""/></a>
@@ -123,223 +124,221 @@
     </div>
     <!---------------Payment-------------------->
     <section class="payment">
-      <div class="container-fuild payment__wrap">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="method-shipping">
-              <h4 class="payment__title">Phương thức vận chuyển</h4>
-              <div class="col-lg-12 payment__content">
-                <div class="payment__content-wrap">
-                  <input
-                    class="styled-checkbox"
-                    id="cart-checkbox"
-                    type="checkbox"
-                    value="value2"
-                    checked
-                  />
-                  <div class="shipping-content">
-                    <label class="mb-0" for="cart-checkbox"
-                      >Vận chuyển thông thường</label
-                    >
-                    <span>Khoảng 2-4 ngày</span>
+      <div class="container-fluid">
+        <div class="payment__wrap">
+          <div class="row ">
+            <div class="col-md-12 col-lg-6">
+              <div class="method-shipping">
+                <h4 class="payment__title">Phương thức vận chuyển</h4>
+                <div class="col-lg-12 payment__content">
+                  <div class="payment__content-wrap">
+                    <input
+                      class="styled-checkbox"
+                      id="cart-checkbox"
+                      type="checkbox"
+                      value="value2"
+                      checked
+                    />
+                    <div class="shipping-content">
+                      <label class="mb-0" for="cart-checkbox"
+                        >Vận chuyển thông thường</label
+                      >
+                      <span>Khoảng 2-4 ngày</span>
+                    </div>
                   </div>
+                  <span class="text-color-main">FREE</span>
                 </div>
-                <span class="text-color-main">FREE</span>
+                <div class="col-lg-12 payment__content">
+                  <div class="payment__content-wrap">
+                    <input
+                      class="styled-checkbox"
+                      id="cart-checkbox-2"
+                      type="checkbox"
+                      value="value2"
+                    />
+                    <div class="shipping-content">
+                      <label class="mb-0" for="cart-checkbox-2"
+                        >Giao hàng nhanh</label
+                      >
+                      <span>Khoảng 1-2 ngày</span>
+                    </div>
+                  </div>
+                  <span class="text-color-main">10.000 vnđ</span>
+                </div>
               </div>
-              <div class="col-lg-12 payment__content">
-                <div class="payment__content-wrap">
-                  <input
-                    class="styled-checkbox"
-                    id="cart-checkbox-2"
-                    type="checkbox"
-                    value="value2"
-                  />
-                  <div class="shipping-content">
-                    <label class="mb-0" for="cart-checkbox-2"
-                      >Giao hàng nhanh</label
-                    >
-                    <span>Khoảng 1-2 ngày</span>
+              <div class="payment-address">
+                <h4 class="payment__title">Chọn địa chỉ đã đăng ký</h4>
+                <div class="col-lg-12 payment__content">
+                  <div class="payment__content-wrap">
+                    <input
+                      class="styled-checkbox"
+                      id="cart-checkbox-3"
+                      type="checkbox"
+                      value="value2"
+                      checked
+                    />
+                    <div class="shipping-content">
+                      <label class="mb-0" for="cart-checkbox-3"
+                        >Bùi Thanh Tùng</label
+                      >
+                      <span>LK6B Mộ Lao, Hà Đông, Hà Nội, Việt Nam</span>
+                      <span>+84 0969 182 968</span>
+                    </div>
                   </div>
                 </div>
-                <span class="text-color-main">10.000 vnđ</span>
+                <div class="col-lg-12 payment__content">
+                  <div class="payment__content-wrap">
+                    <input
+                      class="styled-checkbox"
+                      id="cart-checkbox-4"
+                      type="checkbox"
+                      value="value2"
+                    />
+                    <div class="shipping-content">
+                      <label class="mb-0" for="cart-checkbox-4"
+                        >Bùi Thanh Tùng</label
+                      >
+                      <span>LK6B Mộ Lao, Hà Đông, Hà Nội, Việt Nam</span>
+                      <span>+84 0969 182 968</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="payment-newAddress col-lg-9">
+                <h4 class="payment__title payment-newAddress__title">
+                  Địa chỉ mới
+                </h4>
+                <form class="form-address" action="#">
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6 first-name">
+                      <input
+                        type="text"
+                        class="form-control form-control-md"
+                        placeholder="Họ"
+                      />
+                    </div>
+                    <div class="col-7 col-md-6 col-lg-6 last-name">
+                      <input
+                        type="text"
+                        class="form-control form-control-md"
+                        placeholder="Tên"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-lg-12 address">
+                      <input
+                        type="text"
+                        class="form-control form-control-md"
+                        placeholder="Địa chỉ"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5 col-md-6 col-lg-6 email">
+                      <input
+                        type="text"
+                        class="form-control form-control-md"
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div class=" col-7 col-md-6 col-lg-6 phone">
+                      <input
+                        type="text"
+                        class="form-control form-control-md"
+                        placeholder="Số điện thoại"
+                      />
+                    </div>
+                  </div>
+                  <div class="payment__content-wrap ">
+                    <input
+                      class="styled-checkbox"
+                      id="address-default-ckb"
+                      type="checkbox"
+                      value="value2"
+                    />
+                    <div class="shipping-content address-default">
+                      <label class="mb-0 " for="address-default-ckb"
+                        >Đặt làm địa chỉ mặc định</label
+                      >
+                    </div>
+                  </div>
+                  <div class="payment-newAddress__action">
+                    <button type="submit" class="">Lưu</button>
+                    <button type="button" class="">Hủy</button>
+                  </div>
+                </form>
               </div>
             </div>
-            <div class="payment-address">
-              <h4 class="payment__title">Chọn địa chỉ đã đăng ký</h4>
-              <div class="col-lg-12 payment__content">
-                <div class="payment__content-wrap">
-                  <input
-                    class="styled-checkbox"
-                    id="cart-checkbox-3"
-                    type="checkbox"
-                    value="value2"
-                    checked
-                  />
-                  <div class="shipping-content">
-                    <label class="mb-0" for="cart-checkbox-3"
-                      >Bùi Thanh Tùng</label
-                    >
-                    <span>LK6B Mộ Lao, Hà Đông, Hà Nội, Việt Nam</span>
-                    <span>+84 0969 182 968</span>
+
+            <div class="col-md-12 col-lg-6">
+              <h4 class="payment__title">Giỏ hàng</h4>
+              <div class="cart-items">
+                <!-- Only destop -->
+                <div class="cart-item cart-item-destop">
+                  <img src="./img/cart-img.png" alt="" />
+                  <div class="cart-item-info">
+                    <h6>Sàn SPC vân gỗ VFloor V402</h6>
+                    <span>SKU : 8863</span>
+                    <span>Size: 1x1m</span>
+                  </div>
+                  <span
+                    class="rounded-circle"
+                    style="background-color: #E7C59C;"
+                  ></span>
+                  <span class="cart-item-money">200.000 vnđ</span>
+                </div>
+                <!-- Only tablet -->
+                <div class="cart-item d-lg-none">
+                  <div class="cart-item__left">
+                    <img src="./img/cart-img.png" alt="" />
+                    <div class="cart-item-info">
+                      <h6>Sàn SPC vân gỗ VFloor V402</h6>
+                      <span>SKU : 8863</span>
+                      <span>Size: 1x1m</span>
+                    </div>
+                  </div>
+                  <div class="cart-item__right">
+                    <span
+                      class="rounded-circle"
+                      style="background-color: #E7C59C;"
+                    ></span>
+                    <span class="cart-item-money">200.000 vnđ</span>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-12 payment__content">
-                <div class="payment__content-wrap">
-                  <input
-                    class="styled-checkbox"
-                    id="cart-checkbox-4"
-                    type="checkbox"
-                    value="value2"
-                  />
-                  <div class="shipping-content">
-                    <label class="mb-0" for="cart-checkbox-4"
-                      >Bùi Thanh Tùng</label
-                    >
-                    <span>LK6B Mộ Lao, Hà Đông, Hà Nội, Việt Nam</span>
-                    <span>+84 0969 182 968</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="payment-newAddress col-lg-9">
-              <h4 class="payment__title payment-newAddress__title">
-                Địa chỉ mới
-              </h4>
-              <form class="form-address" action="#">
-                <div class="row">
-                  <div class="col-lg-6 first-name">
-                    <input
-                      type="text"
-                      class="form-control form-control-md"
-                      placeholder="Họ"
-                    />
-                  </div>
-                  <div class="col-lg-6 last-name">
-                    <input
-                      type="text"
-                      class="form-control form-control-md"
-                      placeholder="Tên"
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-12 address">
-                    <input
-                      type="text"
-                      class="form-control form-control-md"
-                      placeholder="Địa chỉ"
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6 email">
-                    <input
-                      type="text"
-                      class="form-control form-control-md"
-                      placeholder="email"
-                    />
-                  </div>
-                  <div class="col-lg-6 phone">
-                    <input
-                      type="text"
-                      class="form-control form-control-md"
-                      placeholder="Số điện thoại"
-                    />
-                  </div>
-                </div>
+              <div class="total-money">
                 <div class="payment__content-wrap ">
                   <input
                     class="styled-checkbox"
-                    id="address-default-ckb"
+                    id="cart-ckb"
                     type="checkbox"
                     value="value2"
                   />
-                  <div class="shipping-content address-default">
-                    <label class="mb-0 " for="address-default-ckb"
-                      >Đặt làm địa chỉ mặc định</label
-                    >
+                  <div
+                    class="shipping-content address-default cart__footer-ckb"
+                  >
+                    <label class="mb-0 label-ckb" for="cart-ckb"
+                      >Thuê công khoán tính thêm 5% phí hao mòn
+                    </label>
                   </div>
                 </div>
-                <div class="payment-newAddress__action">
-                  <button type="submit" class="">Lưu</button>
-                  <button type="button" class="">Hủy</button>
+                <div class="cart__footer-total">
+                  <div class="cart__total cart__total-title">
+                    <h6>Tổng tiền hàng</h6>
+                    <h6>Tiền vận chuyển</h6>
+                    <h6 class="mb-0 text-600">Tổng thanh toán</h6>
+                  </div>
+                  <div class="cart__total cart__total-money">
+                    <h6>1.850.000 vnđ</h6>
+                    <h6>0</h6>
+                    <h6 class="mb-0 text-600">1.850.000 vnđ</h6>
+                    <span>*Đã bao gồm thuế VAT</span>
+                  </div>
                 </div>
-              </form>
+              </div>
+              <button class="btn-buy" type="button">Mua hàng</button>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <h4 class="payment__title">Giỏ hàng</h4>
-            <div class="cart-items">
-              <div class="cart-item">
-                <img src="./img/cart-img.png" alt="" />
-                <div class="cart-item-info">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
-                  <span>Size: 1x1m</span>
-                </div>
-                <span
-                  class="rounded-circle"
-                  style="background-color: #E7C59C;"
-                ></span>
-                <span class="cart-item-money">200.000 vnđ</span>
-              </div>
-              <div class="cart-item">
-                <img src="./img/cart-img.png" alt="" />
-                <div class="cart-item-info">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
-                  <span>Size: 1x1m</span>
-                </div>
-                <span
-                  class="rounded-circle"
-                  style="background-color: #E7C59C;"
-                ></span>
-                <span class="cart-item-money">200.000 vnđ</span>
-              </div>
-              <div class="cart-item">
-                <img src="./img/cart-img.png" alt="" />
-                <div class="cart-item-info">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
-                  <span>Size: 1x1m</span>
-                </div>
-                <span
-                  class="rounded-circle"
-                  style="background-color: #E7C59C;"
-                ></span>
-                <span class="cart-item-money">200.000 vnđ</span>
-              </div>
-              <div class="cart-item">
-                <img src="./img/cart-img.png" alt="" />
-                <div class="cart-item-info">
-                  <h6>Sàn SPC vân gỗ VFloor V402</h6>
-                  <span>SKU : 8863</span>
-                  <span>Size: 1x1m</span>
-                </div>
-                <span
-                  class="rounded-circle"
-                  style="background-color: #E7C59C;"
-                ></span>
-                <span class="cart-item-money">200.000 vnđ</span>
-              </div>
-            </div>
-            <div class="total-money">
-              <div class="cart__footer-total">
-                <div class="cart__total cart__total-title">
-                  <h6>Tổng tiền hàng</h6>
-                  <h6>Tiền vận chuyển</h6>
-                  <h6 class="mb-0">Tổng thanh toán</h6>
-                </div>
-                <div class="cart__total cart__total-money">
-                  <h6>1.850.000 vnđ</h6>
-                  <h6>0</h6>
-                  <h6 class="mb-0">1.850.000 vnđ</h6>
-                  <span>*Đã bao gồm thuế VAT</span>
-                </div>
-              </div>
-            </div>
-            <button class="btn-buy" type="button">Mua hàng</button>
           </div>
         </div>
       </div>

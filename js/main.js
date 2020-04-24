@@ -1,39 +1,59 @@
-document.getElementById("menu").addEventListener("click", function() {
-  document.getElementById("full-screen").classList.add("full-screen");
-  document.getElementsByClassName("show-icon").style.display = "inline-block";
-});
-function myFunction() {
-  document.getElementById("dropdown-menu").classList.toggle("show");
-  document
-    .getElementById("product-dropdown")
-    .classList.toggle("dropdown-rotate");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches("#product-dropdown")) {
-    var dropdowns = document.getElementsByClassName("dropdown-menu");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-        document
-          .getElementById("product-dropdown")
-          .classList.remove("dropdown-rotate");
-      }
-    }
-  }
-};
-
 $(document).ready(function() {
   var $win = $(window);
   var $nav = $("#navbarCollapse");
   var brand = $(".brand__list li");
-  var ele = $("#carouselExampleIndicators .carousel-indicators li.active");
-  if (ele) {
-    // $(".carousel-indicators-number li").addClass("active");
-  }
+
+  // show menu home
+  $(".nav__icon--menu").on("click", function() {
+    $("#display-opacity").addClass("display-opacity");
+    $("body").css({ "margin-top": 0 });
+    $(".header").css({ position: "inherit" });
+  });
+
+  // show cart popup
+  $("#cart-icon").click(function(e) {
+    e.stopPropagation();
+    let popupCart = $(this).next(".cart-popup");
+    $(".cart-popup").toggleClass("show-cart");
+    $win.click(function() {
+      popupCart.removeClass("show-cart");
+    });
+  });
+
+  // dropdown menu product
+  $("#product-dropdown").on("click", function() {
+    $(this).toggleClass("rotate-90");
+    if ($(this).hasClass("rotate-90")) {
+      $(this)
+        .parent()
+        .next("#dropdown-menu")
+        .slideDown(300);
+    } else {
+      $(this).removeClass("rotate-90");
+      $(this)
+        .parent()
+        .next("#dropdown-menu")
+        .slideUp(300);
+    }
+  });
+
+  // toggle tag ol in slide home
+  $(".carousel-indicators-number li").click(function() {
+    console.log($(this).attr("data-slide-to"));
+    $(".carousel-indicators-number li.active").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  $(".carousel-indicators li").click(function() {
+    var index = $(".carousel-indicators-number li.active").attr(
+      "data-slide-to",
+      function() {
+        console.log(index);
+      }
+    );
+  });
+
+  function toggleDots() {}
 
   $win.on("click.Bts", function(e) {
     if ($win.has(e.target).length == 0 && !$nav.is(event.target)) {
@@ -43,7 +63,8 @@ $(document).ready(function() {
     $(this).toggleClass("active");
   });
 
-  if ($(window).width() < 576) {
+  //select color brand
+  if ($win.width() < 576) {
     var widthSelect = $(".brand__select-color").width();
     $(".select-color").css({
       "min-width": widthSelect
@@ -51,8 +72,8 @@ $(document).ready(function() {
     $("#input-select-color").empty("");
   }
 
-  $(window).resize(function() {
-    var width = $(window).width();
+  $win.resize(function() {
+    var width = $win.width();
 
     if (width < 576) {
       $("#input-select-color").empty("");
@@ -69,7 +90,7 @@ $(document).ready(function() {
     }
   });
 
-  $(window).click(function() {
+  $win.click(function() {
     if ($(".dropdown-icon").hasClass("rotate")) {
       $(".dropdown-icon").removeClass("rotate");
     }
@@ -106,15 +127,21 @@ $(document).ready(function() {
       $(".products__sort-content").slideUp(300);
     }
   });
+
   // show product filter
   $(".products__sort .sort-icon").on("click", function() {
     $("#display-opacity").addClass("display-opacity");
     $("#product-filter").addClass("active");
   });
-  // close product filter
-  $("#display-opacity").click(function(event) {
-    event.stopPropagation();
+  // close  sidebar
+  $("#display-opacity").click(function(e) {
+    e.stopPropagation();
+    // hide product filter
     $("#product-filter").removeClass("active");
+    // hide menu header
+    $(".navbar-collapse").removeClass("show");
+    $(".header").css({ position: "fixed" });
+
     $(this).removeClass("display-opacity");
   });
 

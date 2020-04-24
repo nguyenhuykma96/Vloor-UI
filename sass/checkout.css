@@ -27,9 +27,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .payment__content-wrap {
@@ -187,6 +187,8 @@
   width: 100px;
   height: 30px;
   text-align: center;
+  background-color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .payment-newAddress__action button:first-child {
@@ -239,8 +241,8 @@
 }
 
 .cart-item img {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -259,7 +261,7 @@
 }
 
 .total-money {
-  padding-top: 50px;
+  padding-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -268,6 +270,83 @@
 }
 
 .btn-buy {
-  width: 470px;
+  max-width: 470px;
+  width: 100%;
+}
+
+.cart__footer-ckb .label-ckb {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1400px) {
+  .payment__wrap {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 991.9px) {
+  .cart-item-destop {
+    display: none;
+  }
+  .cart-item__left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .cart-item__left img {
+    margin-right: 14px;
+  }
+  .cart-item__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .cart-item__right .rounded-circle {
+    margin-bottom: 26px;
+  }
+  .total-money {
+    padding-top: 0;
+  }
+  .cart__footer-total {
+    border-top: unset;
+    border-bottom: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn-buy {
+    max-width: 100%;
+  }
+  .form-address {
+    padding-bottom: 38px;
+    border-bottom: 1px solid #c4c4c4;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .payment__wrap {
+    padding: 0 6px;
+  }
 }
 /*# sourceMappingURL=checkout.css.map */

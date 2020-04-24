@@ -162,6 +162,8 @@
 
 .products__sidenav-title i {
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .products__sidenav-content {
@@ -310,8 +312,8 @@
 .rotate-180 {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .pagination {

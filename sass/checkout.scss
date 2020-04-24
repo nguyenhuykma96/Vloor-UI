@@ -15,7 +15,7 @@
   }
   &__content {
     padding-bottom: 20px;
-    @include flex(flex, row, space-between, center);
+    @include flex(flex, row, space-between, flex-start);
     &-wrap {
       @include flex(flex, row, flex-start, flex-start);
       .custom-checkbox {
@@ -129,6 +129,8 @@
       width: 100px;
       height: 30px;
       text-align: center;
+      background-color: $color-white;
+      margin-bottom: 10px;
       &:first-child {
         margin-right: 30px;
       }
@@ -154,8 +156,8 @@
     }
   }
   img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
   }
   &-money {
@@ -171,7 +173,7 @@
   background-color: $color-main;
 }
 .total-money {
-  padding-top: 50px;
+  padding-top: 30px;
   margin-bottom: 50px;
   .cart__total-title {
     text-align: left;
@@ -179,5 +181,73 @@
 }
 .btn-buy {
   @extend .btn-main;
-  width: 470px;
+  max-width: 470px;
+  width: 100%;
+}
+.cart__footer-ckb {
+  .label-ckb {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .payment__wrap {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 991.9px) {
+  .cart-item {
+    &-destop {
+      display: none;
+    }
+    &__left {
+      @include flex(flex, row, flex-start, flex-start);
+      img {
+        margin-right: 14px;
+      }
+    }
+    &__right {
+      @include flex(flex, column, center, flex-end);
+      .rounded-circle {
+        margin-bottom: 26px;
+      }
+    }
+  }
+  .total-money {
+    padding-top: 0;
+  }
+  .cart__footer {
+    &-total {
+      border-top: unset;
+      border-bottom: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn-buy {
+    max-width: 100%;
+  }
+  .form-address {
+    padding-bottom: 38px;
+    border-bottom: 1px solid $color-border-1;
+  }
+
+  .payment__content-wrap {
+    // margin: 10px 0;
+  }
+  // .cart__footer {
+  //   &-total {
+  //     border-top: unset;
+  //   }
+  // }
+}
+@media screen and (max-width: 576px) {
+  .payment__wrap {
+    padding: 0 6px;
+  }
 }

@@ -207,6 +207,9 @@
     @include flex(flex, row, center, center);
   }
 }
+.text-600 {
+  font-weight: 600;
+}
 
 @media screen and (max-width: 1400px) {
   .cart__title {
@@ -234,6 +237,9 @@
 @media screen and (max-width: 991.9px) {
   .set-width-price {
     min-width: 105px;
+  }
+  .cart__container {
+    padding: 25px 30px;
   }
   .cart__title {
     padding: 25px 60px;
@@ -302,9 +308,6 @@
   }
   .cart__title {
     // padding: 25px 46px;
-  }
-  .text-600 {
-    font-weight: 600;
   }
 
   .cart__container {
