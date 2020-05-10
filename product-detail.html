@@ -172,7 +172,10 @@
           </div>
           <!-- Destop and Tablet -->
           <div class="col-md-12 col-lg-6 col-12 product-detail__preview ">
-            <div class="product-detail__preview-pic tab-content">
+            <div
+              id="product-detail-img"
+              class="product-detail__preview-pic tab-content"
+            >
               <div class="tab-pane active" id="pic-1">
                 <img src="./img/prodcut-detail-active.png" />
               </div>
@@ -189,7 +192,7 @@
             <ul class="row preview-thumbnail nav nav-tabs">
               <li class="col-sm-3 col-md-3 col-lg-3 active">
                 <a data-target="#pic-1" data-toggle="tab"
-                  ><img src="./img/product-detail.png"
+                  ><img src="./img/prodcut-detail-active.png"
                 /></a>
               </li>
               <li class="col-sm-3 col-md-3 col-lg-3">
@@ -209,6 +212,31 @@
               </li>
             </ul>
           </div>
+
+          <!-- show image of product detail full screen -->
+          <div class="fullScreen">
+            <button type="button" class="btn btn-close">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="owl-carousel owl-theme fullScreen__wrap">
+              <div class="fullScreen__item">
+                <img src="./img/product-detail-mobile.png" />
+              </div>
+              <div class="fullScreen__item">
+                <img src="./img/product-detail-mobile.png" />
+              </div>
+              <div class="fullScreen__item">
+                <img src="./img/product-detail-mobile.png" />
+              </div>
+              <div class="fullScreen__item">
+                <img src="./img/product-detail-mobile.png" />
+              </div>
+              <div class="fullScreen__item">
+                <img src="./img/product-detail-mobile.png" />
+              </div>
+            </div>
+          </div>
+
           <!-- Mobile -->
           <div
             class="owl-carousel owl-theme product-detail__preview-mobile d-sm-none "

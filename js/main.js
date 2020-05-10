@@ -133,6 +133,24 @@ $(document).ready(function() {
 
     $(this).removeClass("display-opacity");
   });
+  // show img product detail full screen
+
+  $("#product-detail-img .tab-pane img").dblclick(function(e) {
+    $(".fullScreen").addClass("display-opacity");
+    $(".fullScreen").addClass("show-fullScreen");
+  });
+  $(".btn-close").click(function() {
+    $(".fullScreen").removeClass("display-opacity");
+    $(".fullScreen").removeClass("show-fullScreen");
+  });
+
+  $(".fullScreen__wrap").owlCarousel({
+    items: 1,
+    margin: 10,
+    dots: false,
+    nav: true,
+    navText: ["<img src='./img/next.png'>", "<img src='./img/prev.png'>"]
+  });
 
   // carousel
   $(".floor__slide-carousel").owlCarousel({
